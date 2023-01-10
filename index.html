@@ -1,33 +1,367 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./assets/reset.css">
-    <link rel="stylesheet" href="./assets/common.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.5.11/split.min.js"></script>
+<div class="vr_player"></div>
+<div id="afreecatv_player" class="">
 
-    <title>030901yu</title>
-</head>
-<body>
-<div class="wrapper">
-    <div id="view">
-        <iframe src="https://player.twitch.tv/?channel=030901yujin&parent=030901yu.github.io" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
-    </div>
-    <div id="chat">
-        <script async src="//client.uchat.io/uchat.js"></script>
-        <u-chat room='030901yu' style="width: 100%; height: 100%;"></u-chat>
-    </div>
+
+		<!-- 플에이어  사이즈 비율 출력 엘리먼트   -->
+		<div class="afreecatv_player_size"></div>
+
+
+
+		<!-- 비디오 영역 div 는  개발 요청으로 추가  -->
+		<div id="videoLayer">
+		</div>
+
+        <div id="videoLayerCover" tabindex="1"
+             style="position: absolute;top: 0;left: 0;right: 0;bottom: 0;z-index: 2; display: none;"></div>
+		<!-- 워터마크 -->
+		<!-- tl , tc , tr  , bl , bc , br  클레스로 포지션 지정 , 포지션 지정되지 않을시 출력되지 않음
+			opacity 클레스 추가시 불투명하게 출력 -->
+		<div class="watermark tl opacity" style="display:none;">afreecaTV</div>
+
+		<!--  기본로고 출력 -->
+		<div class=" default_logo">afreecaTV</div>
+
+		<!-- 툴팁-->
+		<div class="tooltip" style="top:50px;  left: 100px;"><em></em></div>
+
+		<!-- body 에  embedded_mode 클레스 추가시 출력됨-->
+		<!-- <h1 class="player_title"> <span></span><strong>AfreecaTV</strong> </h1> -->
+
+		<!-- 2018-0907
+			사전탐방 송출제한  엘리먼트 이동 (tuneou)   , 기본값은 none
+			smode , extend_mode , 퍼가기 모드출력될 수 있도록  css 컨트로
+			로고는
+		-->
+		<div class="player_info">
+						<div class="title"> <!-- -->
+				<div>
+					<span id="bjNick"></span>
+					<span id="viewerCnt"><em></em></span>
+				</div>
+				<h1 id="broadTitle"></h1>
+				    			<a href="https://play.afreecatv.com/aflol/244457616" target="_blank"></a> <!-- 퍼가기시 css  컨틀로로 출력 -->
+                			</div>
+		</div>
+
+		<!--  screen mode 일 때 채팅창, 리스트, 즐찾 열기 -->
+		<ul class="view_ctrl in_screen" style="display: none;">
+			<li class="btn_chat"><button type="button"><span>채팅창 on/off</span></button></li>
+			<li class="btn_list"><button type="button"><span>방송리스트 on/off</span></button></li>
+			<li class="btn_list_bookmark"><button type="button"><span>즐겨찾기 on/off</span></button></li>
+		</ul>
+		<!--  //screen mode 일 때 채팅창, 리스트, 즐찾 열기 -->
+
+		<!-- 플레이어 컨트롤 버튼 -->
+		<div class="player_ctrlBox" tabindex="1">
+			<!-- <div class="ms-test-cont" style="display:inline-block;">
+				<ul>
+					<li class="content-type" style="display:inline-block">LIVE  </li>
+					<li class="bj-nick"style="display:inline-block">뷁키 </li>
+					<li class="viewer-cnt" style="display:inline-block">123 </li>
+				</ul>
+				<div class="broad-title">
+
+				</div>
+			</div> -->
+			<div class="ctrl">
+				<div class="progress" style="display: none;">
+					<div class="progress_track">
+						<div class="video_thumbnail time">
+							<span class="reverse_time"><em></em></span>
+							<span class="dev_positive_time" style="bottom : 25px; display: none;"><em></em></span>
+						</div>
+						<div class="watched" style="width:100%;"></div>
+						<button class="handler" style="left:100%;"><span></span></button>
+						<div class="download" style="width:0%; display: none;"></div>
+						<div class="progress_bar"></div>
+					</div>
+				</div>
+				<!-- 타임 시프트 용 play pause 버튼 -->
+				<button type="button" id="time_shift_play" class="pause" aria-label="재생" style="display: none;"></button>
+				<!-- 재생버튼 stop 클레스 변경시 정지버튼으로 변경됨 -->
+				<button type="button" id="play" class="play" aria-label="재생"></button>
+				<!-- 볼륨 -->
+				<div class="volume">
+					<button type="button" class="sound" id="btn_sound">
+						<span></span><span></span>
+					</button>
+					<div class="volume_slider_wrap">
+						<div class="volume_slider">
+							<div class="volume_range" style="width: 50%;"></div>
+							<button class="volume_handler" style="left:50%;"></button>
+						</div>
+					</div>
+				</div>
+				<button type="button" id="liveButton" class="live_state" style="display: block;"><em></em><span>LIVE</span></button>
+
+			</div>
+
+			<div class="right_ctrl">
+
+				<!-- 임베디드 아프리카티비 바로가기 -->
+				<!--<button type="button" class="btn_afreecatv">아프리카 티비에서 보기</button>-->
+
+                <!-- 임베디드 공유하기 -->
+                <button type="button" class="btn_share"></button>
+
+				<!-- 화질선택 임베디드는 미노출 -->
+				<div class="quality_box">
+					<button type="button" class="btn_quality_mode"><span>일반화질</span></button>
+					<ul>
+						<li><button type="button" class="auto_quality"><span>자동화질</span></button></li>
+						<li><button type="button" class="original_quality"><span>원본화질</span></button></li>
+						<li><button type="button" class="high_quality"><span>고화질</span></button></li>
+						<li><button type="button" class="normal_quality"><span>일반화질</span></button></li>
+						<li><button type="button" class="low_quality"><span>저화질</span></button></li>
+					</ul>
+				</div>
+
+				<!-- 플레이어 셋팅버튼 -->
+				<div class="setting_box" style="display:block;">
+					<button type="button" class="btn_setting">setting<div class="tooltip" style="display: none;"><span>설정</span><em></em></div>
+					</button>
+					<div class="setting_list">
+						<ul>
+							<!-- span 안에 "자막켜기" 텍스트 있는데 js 에서 동적으로 처리함 -->
+							<li><button type="button" id="btnLiveCaptionOnOff" style="display: none;"><span></span></button></li>
+							<li><button type="button" id="btnCheckPlayerState"><span>진단하기</span></button></li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- PIP -->
+				<button type="button" class="btn_pip_mode" style="display: none;">
+					<div class="tooltip"><span>PIP 모드(P)</span><em></em></div>
+				</button>
+
+				<!-- 씨네마 -->
+				<button type="button" class="btn_smode">
+					<!-- 툴팁 2016-0923--><div class="tooltip"><span>스크린모드(S)</span><em></em></div>
+				</button>
+				<!-- 전체모드 클레스 추가시 버튼형태 변경 -->
+				<button type="button" class="btn_extend_mode">
+					<div class="tooltip"><span>전체화면(F)</span><em></em></div>
+				</button>
+
+			</div>
+
+		</div>
+
+		<div class="center_btn" style="display: none;">
+			<button type="button" class="btn_cneter_play" style="display: none;"><span>PLAY</span></button>
+
+			<div class="volume_icon"  style="display: none;"><span></span><span></span><span></span><span></span><span></span></div>
+		</div>
+
+        <!-- 5초 앞,뒤로 이벤트 -->
+        <div class="center_msg" style="display: none;"><span>5초</span></div>
+
+        <div class="nextvideo" id="stop_screen">
+            <dl>
+                <dt class="tit">다음 VOD</dt>
+                <dd class="stit">title</dd>
+                <dd class="nextplay"><a href="#n">VOD 보기</a></dd>
+            </dl>
+            <em class="cancel"><a href="#n">자동재생 취소</a></em>
+            <span class="timer"><em></em> 후 자동재생</span>
+            <span class="bg"></span>
+        </div>
+
+		<!-- 화면 블라인드 상태 -->
+		<!-- <div class="video_blind"> -->
+		<div class="video_blind" style="display:none;">
+			<div class="video_blind_in">
+				<div class="content">
+										<!-- 성인 Embed용 -->
+					<div class="dialog type_adult" style="display:none;">
+						<h2>19</h2>
+						<p>
+							청소년 유저들을 보호하기 위해 <em>19세 이상의 유저만</em><br> 이용할 수 있도록 연령제한이 설정된 컨텐츠 입니다.							<br>
+							<strong>연령제한 콘텐츠는 아프리카TV 플레이어로만 시청할 수 있습니다.</strong>
+						</p>
+						
+						<div class="btn_set">
+							<button type="button" class="open"><span>아프리카TV 플레이어 열기</span></button>
+						</div>
+					</div>
+					<!-- //성인 Embed용 -->
+
+					<div class="dialog type_maxuser" style="display:none;">
+                        <h2>참여 가능한 인원이 초과되었습니다.<br>잠시 후 입장해 주세요.</h2>
+                    </div>
+					
+					<!-- PPV 방송  -->
+					<div class="dialog type_ppv_not_allow" style="display:none;">
+						<p>본 방송은 티켓 구매 후 참여가능 합니다.</p>
+						<div class="btn_set">
+							<button type="button" class="enter"><span>확인</span></button>
+						</div>
+					</div>
+
+					<div class="dialog type_ppv_not_login" style="display:none;">
+						<p>본 방송은 로그인이 필요한 서비스 입니다.</p>
+						<div class="btn_set">
+							<button type="button" class="enter"><span>로그인</span></button>
+						</div>
+					</div>
+					<!-- //PPV 방송 -->
+
+					<div class="dialog type_adult_lock" style="display:none;">
+						<h2><span class="adult">19</span><span class="lock">lock</span></h2>
+						<p>이 방송은 BJ가 만 19세 미만 참여를 <br> 제한한 방송이며 비밀번호가 설정되어 있습니다.</p>
+					</div>
+
+					<!-- 무중단 -->
+					<div class="dialog type_continue" style="display:none;">
+						<h2>앗, 잠깐만 기다려주세요</h2>
+						<p class="txt">방송이 잠시 중단되었습니다.</p>
+                        <p class="txt_desc">대기 시간 내에 BJ님이 재접속하면 방송이 다시 시작됩니다.</p>
+						<span>대기시간 <em>00:00</em></span>
+					</div>
+					<!-- //무중단 -->
+
+					<!-- 비번방 -->
+					<div class="dialog type_password" style="display:none;">
+                        <form name="passwordForm" style="margin:0px" onsubmit="return false;">
+						<h2>비밀번호 설정 방송</h2>
+						<p>방송을 보려면 BJ가 정해놓은 비밀번호를 입력해야 합니다.</p>
+						<div><label for="pwd">비밀번호</label><input type="password" id="pwd"></div>
+						<p class="red" style="display:none;">비밀번호가 일치하지 않습니다.</p>
+						<div class="btn_set">
+							<button type="button" class="enter"><span>들어가기</span></button> <button type="button" class="close"><span>되돌아가기</span></button>
+						</div>
+                        </form>
+					</div>
+					<!-- //비번방 -->
+
+					<!-- 블라인드 -->
+					<div class="dialog type_blind" style="display:none;">
+						<h2>BLIND</h2>
+						<strong>채팅금지 횟수 초과로 인해 <span>2</span>분간 블라인드 처리됩니다.</strong>
+						<p>블라인드 상태에서는 화면과 채팅이 보이지 않으며 <br> 블라인드 상태로 방송에서 나갈 경우 <br> 자동 강제퇴장 처리되며 재입장이 불가능합니다.</p>
+					</div>
+					<!-- //블라인드 -->
+
+					<!-- 방송종료  -->
+					<div class="dialog type_end" style="display:none;"><h2>방송 중이지 않습니다.</h2></div>
+					<!-- //방송종료  -->
+
+					<!-- 브라우저 업데이트  -->
+					<div class="dialog" style="display:none;" id="browserUpDate">
+						Flash플레이어 지원이 2020년 6월에 종료되었습니다.<br>브라우저를 업데이트하여 최적의 환경에서 아프리카TV를 이용해 보세요!					</div>
+					<!-- //브라우저 업데이트  -->
+
+					<div class="dialog type_mobile_pause" style="display:none;">
+						<h2>BJ가 방송을 일시정지 하였습니다.</h2>
+						<p>다시 시작할때까지 잠시만 기다려 주세요</p>
+					</div>
+
+
+					<!-- 공통케이스 -->
+					<div class="dialog type_common" style="display:none;">
+						<!--p><span class="blue">DARgooni</span>에 의해 강제 퇴장되었습니다.</p>
+						<p>운영자에 의해 강제 퇴장되었습니다.</p>
+						<p>BJ에 의해 강제 퇴장되었습니다.</p>
+						<p>운영자에 의해 방송이 종료되었습니다.</p>
+						<p>동일한 방송을 여러 개 시청하실 수 없습니다. <br><strong>해당 방송은 이미 시청 중입니다.</strong></p>
+						<p>BJ에 의해 블랙리스트로 등록되어 방송을 시청할 수 없습니다.</p>
+						<p>아프리카TV 운영원칙 위반으로 서비스 이용이 정지되었습니다.</p>
+						<p>정상적인 접근이 아니므로 방송을 시청할 수 없습니다.</p>
+						<p>해외 지역 제한 서비스입니다.</p>
+						<p><strong>[AfreecaTV 서비스 점검] </strong><br><span>2016년 8월 13일(수) 03:00~08:00</span> 까지 서비스 점검 중 입니다.</p-->
+					</div>
+					<!-- //공통케이스 -->
+				</div>
+			</div>
+		</div>
+		<!-- 크롬 브라우저 설치 유도 -->
+		<div class="ui-pop chrome_install" style="display:none">
+			<div class="pop-body">
+				<strong>Chrome 브라우저로 참여해 보세요!</strong>
+				<p>
+					최신 버전의 Chrome 브라우저를 이용하시면<br>보다 안정적인 HTML5 플레이어로<br>방송을 이용하실 수 있습니다.				</p>
+				<a href="https://www.google.com/chrome" target="_blank" class="btn_download">Chrome 브라우저 다운로드</a>
+			</div>
+			<div class="chk-box">
+				<input type="checkbox" name="" id="chk1">
+				<label for="chk1">30일간 열지 않기</label>
+			</div>
+			<a href="javascript:;" class="pop-close"><span>레이어 닫기</span></a>
+		</div>
+
+		<!-- 로딩바 -->
+		<div class="loading" style="display: none;">
+			<div>
+				<!--
+					광고 이미지  or 기본 로딩 이미지
+					둘 다 어드민에 등록된 것 사용
+					http://res.afreecatv.com/images/afreecatv_player/loading.gif(기존 로딩 이미지 136*136)는 사용하지 않는다
+					이미지 에러 시 http://res.afreecatv.com/images/afreecatv_player/default_loading.gif(160*160) 를 사용
+				-->
+				<img class="loading_img" src="https://res.afreecatv.com/images/afreecatv_player/default_loading.gif" 
+					data-use-ad="1" data-tracking-tag="" onload="this.done=true;" alt="로딩 이미지">			
+			</div>
+
+		</div>
+		<!-- //로딩바 -->
+		<!-- 버퍼링 바 -->
+		<div class="buffering" style="display: none;"><span></span></div>
+		<!-- //버퍼링 바 -->
+
+		<!-- 광고영역 -->
+		<!-- 2016-1007 -->
+		<div class="da_area" style="display:none;"><a href="javascript:;" ></a></div>
+        <button type="button" style="display:none;" class="da_area_left"  id="da_btn_click"><span>CLICK</span><em>-00:00</em></button>
+        <button type="button" style="display:none;" class="da_area_right" id="da_btn_skip"><em>00</em><span>초 후 광고 SKIP</span></button>
+		
+		<!--160713-->
+		<div class="item_ten" style="display: none;">
+			<div class="blind">불타는 텐미닛</div>
+			<div class="min">1</div>
+			<div class="min2"><strong>1</strong> 초 후 자동으로 UP합니다.</div>
+			<button type="button" class="btn_up"><span class="blind">바로UP</span></button>
+			<button type="button" class="btn_next"><span class="blind">다음 기회에</span></button>
+			<button type="button" class="btn_close"><span class="blind">닫기</span></button>
+		</div>
+		<!--//160713-->
+		
+		<!--쉬는시간용 블루박스-->
+		<div class="break_time" id="breakTimeBox" style="display: none;">
+			<p>
+				<strong><i></i><em></em>쉬는시간 후 방송이 이어집니다. </strong>
+				BJ에게 후원이 되는 광고 보면서 조금만 기다려요!			</p>
+		</div>
+		<!--//쉬는시간용 블루박스-->
+
+		<!--adcon-->
+		<div class="adballoon_icon" style="display: none; z-index:999;">
+			<a href="javascript:;" class="adcon-area" style="z-index:999;">
+				<span class="thumb"><img src="" ></span>
+				<span class="con_desc">
+					<span class="area">
+						<em class="con_tit">ADCON</em>
+						<span class="con_stit">BJ가 선택한 ADCON 클릭</span>
+					</span>
+				</span>
+			</a>
+			<button type="button" class="adballoon_close"><span></span></button>
+		</div>
+		<!--//adcon-->
+
+		<div class="browser_alarm">
+			<p>
+				Flash 플레이어 지원종료 안내 
+				<a href="https://www.afreecatv.com/flashplayer_information.html" target="_blank">브라우저 업데이트</a>
+			</p>
+			<a href="#n" class="close">닫기</a>
+		</div>
+
+		<div id="paidPromotionNoticeBox" class="text_box"> <p>본 영상은 광고를 포함하고 있습니다.</p> </div>
+
+		<div id="liveCaptionBox" class="screen_text_output">
+			<div class="text">
+				<img src="" alt="">
+				<p></p> <!-- style="font-size: 10px;" -->
+			</div>
+		</div>
 </div>
-<script>
-    Split(['#view', '#chat'], {
-        sizes: [75, 25],
-    })
-</script>
-
-</body>
-</html>
