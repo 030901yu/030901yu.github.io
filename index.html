@@ -1,3 +1,181 @@
+
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="keywords" content="아프리카TV,아프리카,개인방송,신대륙,UCC" />
+<meta name="Description" content="보이는라디오,개인방송 신대륙,아프리카TV" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+<meta property="fb:app_id" content="118793551515130" />
+	<meta property="og:title" content="[Team 페이커 vs Team 데프트] 시즌 2023 킥오프 이벤트" />
+	<meta property="og:type" content="website"/>
+	<meta property="og:image" content="https://liveimg.afreecatv.com/m/244457616?741" />
+	<meta property="og:site_name" content="AfreecaTV"/>
+	<meta property="og:description" content="LCK | LCK_KR"/>
+	<meta property="og:updated_time" content="1673341652"/>
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@afreecatv">
+	<meta name="twitter:title" content="[Team 페이커 vs Team 데프트] 시즌 2023 킥오프 이벤트">
+	<meta name="twitter:description" content="LCK | LCK_KR">
+	<meta name="twitter:image" content="https://liveimg.afreecatv.com/m/244457616?741">
+	<meta name="twitter:player" content="https://play.afreecatv.com/aflol/embed">
+	<meta name="twitter:player:width" content="1280">
+	<meta name="twitter:player:height" content="720">
+	<meta name="weibo:video:embed_code" content="https://play.afreecatv.com/aflol/embed">
+<title>LCK_KR | 아프리카TV 플레이어</title>
+<!-- 2019-0611 css 경로 정리 -->
+<link rel="stylesheet" type="text/css" href="https://res.afreecatv.com/css/global/common_set.css">
+<link rel="stylesheet" type="text/css" href="https://res.afreecatv.com/css/global/chat/chat_wrap.css"> <!-- 채팅용 css -->
+<link rel="stylesheet" type="text/css" href="https://res.afreecatv.com/css/global/webplayer/webplayer_live.css"> <!-- 웹플레이어용 css -->
+<!-- //2019-0611 css 경로 정리 -->
+</head>
+<body class="ko_KR embeded_mode" style="margin: 0 0 0 0; overflow-y:hidden">
+<style>
+    .bxSliderWrapper {
+        max-width: 250px;
+        margin: auto;
+    }
+</style>
+<script>
+	//window.opener에 접근하기 위해 domain이 맞아야 동작하므로 최상단에 적용
+	//기존에 requirejs내에 있엇던 선언이 있음. 모두 afreecatv.com이기때문에  if없이 걍 넣음
+	//외부에서 sandbox iframe으로 플레이어 추가하는 경우가 있어 try catch 검
+	try {
+		window.document.domain = "afreecatv.com";
+	} catch(e) {
+		//try catch도 sentry에 에러 로그 남겠지?
+	}
+
+    if (window.navigator.userAgent.match(/MSIE|Internet Explorer|Trident/i)) {
+        window.location = 'microsoft-edge:' + window.location;
+        setTimeout(function() {
+            window.location = 'https://go.microsoft.com/fwlink/?linkid=2135547';
+        }, 1);
+    }
+</script>
+<!--script type="text/javascript" src="https://res.afreecatv.com/script/common/jquery.js"></script-->
+<script type="text/javascript" charset="utf-8" src="https://static.afreecatv.com/asset/service/config/constant.js?_=202108031200"></script>
+<script type="text/javascript" src="https://static.afreecatv.com/asset/app/liveplayer/player/dist/vendor.js?_=202210040000"></script>
+<script type="text/javascript" src="https://static.afreecatv.com/asset/app/liveplayer/player/dist/LivePlayer.js?_=202210040000"></script>
+<script type="text/javascript" src="https://static.afreecatv.com/asset/app/liveplayer/view/dist/ViewVendor.js?_=202210040000"></script>
+<script type="text/javascript" src="https://static.afreecatv.com/asset/app/liveplayer/view/dist/LiveView.js?_=202210040000"></script>
+<script src="https://static.afreecatv.com/asset/app/sentry/afsentry.php"></script>
+<script type="text/javascript" src="https://static.afreecatv.com/asset/service/common/common_analysis.js"></script>
+<script>
+	var bEmbed = ('direct' == 'embed' || 'direct' == 'direct') ? true : false;
+	var isSimpleMode = Boolean();
+	var szLang = 'ko_KR';
+	var szLocalCode = 'KR';
+    var livePlayer = null;
+    var liveView = null;
+	var szBjId   = 'aflol';
+	var szBjNick   = 'LCK_KR';
+	var nBroadNo = 244457616;
+	var szBroadTitle   = "[Team 페이커 vs Team 데프트] 시즌 2023 킥오프 이벤트"; //방제 끝에 역슬래시 있으면 escape 되어 에러남
+	var szBroadThumPath = 'https://liveimg.afreecatv.com/m/244457616?741';
+	var isDev = Boolean();
+	var szMode = 'direct';
+	var defaultConfig = 'https://static.afreecatv.com/asset/service/config/config.js';
+	var ver = '20190516';
+    var szInflow = '';
+
+    var categories = JSON.parse('{"00130000":"\ud1a0\ud06c\/\ucea0\ubc29","00740000":"\uc5ec\ud589","00330000":"\uba39\ubc29\/\ucfe1\ubc29","00810000":"\ubc84\uce04\uc5bc","00040000":"\uac8c\uc784","00040121":"\uc885\ud569\uac8c\uc784","00040131":"VRChat","00040019":"LoL","00040075":"TFT","00040066":"\ubc30\ud2c0\uadf8\ub77c\uc6b4\ub4dc","00040070":"\ud53c\ud30c\uc628\ub77c\uc7784","00040001":"\uc2a4\ud0c0","00040005":"\uc11c\ub4e0\uc5b4\ud0dd","00040128":"\uc624\ubc84\uc6cc\uce58 2","00040032":"\uba54\uc774\ud50c\uc2a4\ud1a0\ub9ac","00040067":"\ub85c\uc2a4\ud2b8\uc544\ud06c","00040110":"\ubc1c\ub85c\ub780\ud2b8","00040016":"\uc2a4\ud0c02","00040002":"\uc6cc\ud06c\ub798\ud504\ud2b8","00040061":"\ucca0\uad8c","00040014":"\uce74\ud2b8\ub77c\uc774\ub354","00040039":"\ud558\uc2a4\uc2a4\ud1a4","00040130":"\ub370\ub4dc \uc0ac\uc774\ub4dc \ud074\ub7fd","00040127":"\ucee4\uce20\ud3a0","00040125":"\ubca0\uc77c\ub4dc \uc5d1\uc2a4\ud37c\ud2b8","00040123":"\uc288\ud37c\ud53c\ud50c 2","00040122":"\ube14\ub808\uc774\ub4dc \uc5b4\uc370\ud2b8","00040132":"\uac13 \uc624\ube0c \uc6cc \ub77c\uadf8\ub098\ub85c\ud06c","00040096":"\uac70\uc0c1","00040105":"\uac80\uc740\uc0ac\ub9c9","00040086":"\uac9f\uc570\ud504\ub4dc","00040079":"\ub2e4\ud06c\uc5d0\ub374","00040004":"\ub358\ud30c","00040080":"\ub370\ub4dc \ubc14\uc774 \ub370\uc774\ub77c\uc774\ud2b8","00040082":"\ub3c4\ud0c02","00040081":"\ub514\uc544\ube14\ub85c2","00040020":"\ub514\uc544\ube14\ub85c3","00040093":"\ub77c\uadf8\ub098\ub85c\ud06c \uc628\ub77c\uc778","00040094":"\ub808\uc778\ubcf4\uc6b0 \uc2dd\uc2a4","00040103":"\ub808\uc804\ub4dc \uc624\ube0c \ub8ec\ud14c\ub77c","00040012":"\ub9ac\ub2c8\uc9c0","00040088":"\ub9c8\uad6c\ub9c8\uad6c","00040040":"\ub9c8\ube44\ub178\uae30","00040017":"\ub9c8\uc778\ud06c\ub798\ud504\ud2b8","00040089":"\uba54\uc774\ud50c\uc2a4\ud1a0\ub9ac2","00040111":"\ubaa8\uc5ec\ubd10\uc694 \ub3d9\ubb3c\uc758 \uc232","00040090":"\ubaac\uc2a4\ud130\ud5cc\ud130","00040065":"\ubc14\ub78c\uc758\ub098\ub77c","00040042":"\ubc84\ube14\ud30c\uc774\ud130","00040022":"Blade N Soul","00040119":"\uc0ac\uc774\ubc84\ud391\ud06c 2077","00040033":"\uc0ac\uc774\ud37c\uc988","00040133":"\uc18c\ub2c9 \ud504\ub860\ud2f0\uc5b4","00040106":"\uc2a4\uceec","00040007":"\uc2a4\ud398\uc15c\ud3ec\uc2a4","00040095":"\uc2ac\ub7ec\uac70","00040015":"\uc544\uc774\uc628","00040077":"\uc544\ud06c \uc11c\ubc14\uc774\ubc8c \uc774\ubcfc\ube0c\ub4dc","00040126":"\uc544\ud0a4\uc5d0\uc774\uc9c0","00040092":"R2","00040115":"\uc5b4\ubabd \uc5b4\uc2a4","00040073":"Apex \ub808\uc804\ub4dc","00040112":"\uc5d8\ub9ac\uc628","00040083":"\uc5d8\uc18c\ub4dc","00040091":"OSU","00040076":"\uc624\ud1a0\uccb4\uc2a4","00040011":"WOW","00040102":"\uc6d4\ub4dc \uc624\ube0c \ud0f1\ud06c","00040107":"\uc774\uc2a4\ucf00\uc774\ud504 \ud504\ub86c \ud0c0\ub974\ucf54\ud504","00040087":"\uc774\uce74\ub8e8\uc2a4","00040120":"\uc774\ud130\ub110 \ub9ac\ud134","00040135":"eFootball","00040035":"GTA5","00040078":"\uce74\uc6b4\ud130 \uc2a4\ud2b8\ub77c\uc774\ud06c","00040136":"\uce7c\ub9ac\uc2a4\ud1a0 \ud504\ub85c\ud1a0\ucf5c","00040108":"\ucf5c \uc624\ube0c \ub4c0\ud2f0","00040043":"\ud14c\uc77c\uc988\ub7f0\ub108","00040099":"\ud2b8\ub9ac \uc624\ube0c \uc138\uc774\ube44\uc5b4","00040074":"\ud328\uc2a4\uc624\ube0c\uc5d1\uc790\uc77c","00040134":"\ud398\ub974\uc18c\ub098 5 \ub354 \ub85c\uc5f4","00040117":"\ud3ec\ucf13\ubaac\uc2a4\ud130","00040069":"\ud3ec\ud2b8\ub098\uc774\ud2b8","00040114":"\ud3f4 \uac00\uc774\uc988","00040129":"FM","00040085":"\ud504\ub9ac\uc2a4\ud0c0\uc77c","00040124":"FIFA 22","00040116":"\ud5cc\ud130\uc2a4 \uc544\ub808\ub098: \ub808\uc804\ub4dc","00040050":"\ud788\uc624\uc2a4","00040109":"\uaca9\ud22c\uac8c\uc784","00040008":"\ub808\ud2b8\ub85c\uac8c\uc784","00040010":"PC \uc628\ub77c\uc778","00360000":"\ubaa8\ubc14\uc77c\uac8c\uc784","00360003":"\ubaa8\ubc14\uc77c \uc885\ud569\uac8c\uc784","00360056":"LoL: \uc640\uc77c\ub4dc \ub9ac\ud504\ud2b8","00360031":"\ubc30\ud2c0\uadf8\ub77c\uc6b4\ub4dcM","00360022":"\ub9ac\ub2c8\uc9c0M","00360073":"\ub9ac\ub2c8\uc9c0W","00360077":"\ub358\uc804\uc564\ud30c\uc774\ud130 \ubaa8\ubc14\uc77c","00360079":"\ubbf8\ub974M","00360067":"\ub514\uc544\ube14\ub85c \uc774\ubaa8\ud0c8","00360080":"\uc6b0\ub9c8\ubb34\uc2a4\uba54 \ud504\ub9ac\ud2f0 \ub354\ube44","00360076":"\ud2b8\ub77c\ud558 \uc778\ud53c\ub2c8\ud2f0","00360081":"\uc138\ube10\ub098\uc774\uce20 \ub808\ubcfc\ub8e8\uc158","00360060":"\uc138\ube10\ub098\uc774\uce202","00360046":"V4","00360062":"\ucfe0\ud0a4\ub7f0","00360057":"\ubbf8\ub9744","00360069":"\uc624\ub518: \ubc1c\ud560\ub77c \ub77c\uc774\uc9d5","00360070":"\ube14\ub808\uc774\ub4dc\uc564\uc18c\uc6b82","00360082":"\ud788\ud2b82","00360078":"\ub137\ub9c8\ube14 \ud504\ub85c\uc57c\uad6c 2022","00360075":"\uc5b8\ub514\uc148\ubc84","00360084":"\ubb38\uba85: Reign of Power","00360072":"\ucef4\ud22c\uc2a4\ud504\ub85c\uc57c\uad6c2022","00360083":"\ubbf8\ud2f1\ud788\uc5b4\ub85c\uc988","00360071":"\ub9c8\ube14 \ud4e8\ucc98 \ub808\ubcfc\ub8e8\uc158","00360068":"\uc81c2\uc758 \ub098\ub77c","00360064":"\ud2b8\ub9ad\uc2a4\ud130M","00360030":"\uac80\uc740\uc0ac\ub9c9M","00360059":"\uadf8\ub791\uc0ac\uac00","00360041":"\ub2e4\ud06c\uc5d0\ub374M","00360047":"\ub2ec\ube5b\uc870\uac01\uc0ac","00360058":"\ub300\ud56d\ud574\uc2dc\ub300 \uc624\ub9ac\uc9c4","00360066":"DK\ubaa8\ubc14\uc77c","00360028":"\ub77c\uadf8\ub098\ub85c\ud06cM","00360037":"\ub77c\uc774\ud504\uc560\ud504\ud130","00360021":"\ub9ac\ub2c8\uc9c02:\ub808\ubcfc\ub8e8\uc158","00360050":"\ub9ac\ub2c8\uc9c02M","00360012":"\ubaa8\ub450\uc758\ub9c8\ube14","00360054":"\ubc14\ub78c\uc758\ub098\ub77c: \uc5f0","00360053":"\ube14\ub808\uc2a4 \ubaa8\ubc14\uc77c","00360043":"\ube14\ub808\uc774\ub4dc \uc564 \uc18c\uc6b8 \ub808\ubcfc\ub8e8\uc158","00360014":"\uc138\ube10\ub098\uc774\uce20","00360035":"\uc2ed\uc774\uc9c0\ucc9cM","00360048":"\uc5d0\uc624\uc2a4 \ub808\ub4dc","00360052":"A3: \uc2a4\ud2f8\uc5bc\ub77c\uc774\ube0c","00360033":"\uc5d0\ud53d\uc138\ube10","00360049":"\uc5d1\uc18c\uc2a4\ud788\uc5b4\ub85c\uc988","00360034":"\uc624\ud06c","00360063":"\uc6d0\uc2e0","00360065":"\uc774\uce74\ub8e8\uc2a4 \uc774\ud130\ub110","00360055":"\uce74\ud2b8\ub77c\uc774\ub354 \ub7ec\uc26c\ud50c\ub7ec\uc2a4","00360044":"\ud074\ub798\uc2dc \uc624\ube0c \ud074\ub79c","00360018":"\ud074\ub798\uc2dc\ub85c\uc584","00360038":"\ud398\uc774\ud2b8 \uadf8\ub79c\ub4dc \uc624\ub354","00360020":"\ud3ec\ucf13\ubaacGO","00360074":"Pok\u00e9mon UNITE","00360040":"\ud504\ub9b0\uc138\uc2a4 \ucee4\ub125\ud2b8 \ub9ac:\ub2e4\uc774\ube0c","00390000":"\uc9c0\uc0c1\ud30c\/\ucf00\uc774\ube14","00390024":"YTN LIVE","00390013":"\uc5f0\ud569\ub274\uc2a4","00390005":"\ucc44\ub110A","00390006":"TV CHOSUN","00390003":"JTBC","00390004":"MBN","00390025":"\ub9db\uc788\ub294 \ub140\uc11d\ub4e4","00390026":"\uc2dd\uc2e0\ub85c\ub4dc","00390027":"\uc790\uae09\uc790\uc871 \uc6d0\uc815\ub300","00670000":"\ub09a\uc2dc","00660000":"ek\ub9ac\uadf8","00140000":"\uad6d\ub0b4\ud504\ub85c\uc57c\uad6c","00140001":"\ub450\uc0b0","00140002":"\ud55c\ud654","00140003":"\ub86f\ub370","00140004":"\ud0a4\uc6c0","00140005":"\uc0bc\uc131","00140006":"KIA","00140007":"LG","00140008":"SSG","00140010":"NC","00140011":"kt","00140009":"\uc911\ub9bd","00180000":"\ud574\uc678\ud504\ub85c\uc57c\uad6c","00170000":"\uad6d\ub0b4\ud504\ub85c\ucd95\uad6c","00370000":"\ud574\uc678\ud504\ub85c\ucd95\uad6c","00370009":"\ub77c\ub9ac\uac00","00370012":"\ub9ac\uadf8 1","00370013":"\ucf54\ud30c\ub378\ub808\uc774","00370011":"\ud504\ub9ac\ubbf8\uc5b4\ub9ac\uadf8","00370010":"\ucc54\ud53c\uc5b8\uc2a4\ub9ac\uadf8","00370007":"\ubd84\ub370\uc2a4\ub9ac\uac00","00060000":"\uad6d\ub0b4\ud504\ub85c\ub18d\uad6c","00060001":"KBL","00060002":"WKBL","00100000":"\uad6d\ub0b4\ud504\ub85c\ubc30\uad6c","00640000":"3X3\ub18d\uad6c","00800000":"WWE","00190000":"\uaca9\ud22c\uae30","00780000":"\ub7ed\ube44","00750000":"\ubc30\ub4dc\ubbfc\ud134","00570000":"\uc2a4\ud3ec\uce20\uc77c\ubc18","00570004":"\ud1a0\ud06c\/\ubd84\uc11d","00570002":"\ub2f9\uad6c","00570008":"\uc694\uac00\/\ud544\ub77c","00570003":"\ud5ec\uc2a4\/\uc6b4\ub3d9","00570006":"\ubcfc\ub9c1","00570007":"\uace8\ud504","00570009":"\uc544\ub9c8 \uc57c\uad6c","00570010":"\uc544\ub9c8 \ucd95\uad6c","00570012":"\uc544\ub9c8 \ubc30\uad6c","00570013":"\ub9c8\uc778\ub4dc \uc2a4\ud3ec\uce20","00570005":"\uae30\ud0c0","00300000":"\uc5f0\ub839\uc81c\ud55c","00030000":"\uc74c\uc545","00030001":"\uc74c\uc545 \ub77c\uc774\ube0c","00030002":"\uc74c\uc545 \uc2a4\ud2b8\ub9ac\ubc0d","00030003":"\ub178\ub798\ubc29","00020000":"\uc0dd\ud65c\/\uc815\ubcf4","00020007":"\ucde8\ubbf8","00020009":"\ubbf8\uc220","00020006":"\ubdf0\ud2f0","00020011":"\uc6b4\uc138","00020012":"\uc0f5\ud504\ub9ac\uce74","00580000":"\ud3ab\ubc29","00290000":"\uad50\uc591\/\ud559\uc2b5","00290005":"\uc2dc\uc0ac","00290002":"\uc9c0\uc2dd","00290001":"\uc790\uc2b5","00290006":"\uc885\uad50","00290007":"\uacbd\uc81c","00290004":"\uc5b4\ud559","00590000":"\ub354\ube59\/\ub77c\ub514\uc624","00270000":"\uae08\uc735","00270008":"\uc8fc\uc2dd","00270009":"\ud30c\uc0dd","00270006":"\uc554\ud638\ud654\ud3d0","00350000":"\uc560\ub2c8","00350037":"\ub514\uc9c0\ubaac \uc5b4\ub4dc\ubca4\ucc98:","00350025":"\uc6d0\ud53c\uc2a4","00350013":"\ube14\ub9ac\uce58","00350027":"\ub4dc\ub798\uace4\ubcfcZ","00350035":"\uc774\ub204\uc57c\uc0e4","00350036":"\ub7ec\ube0c\ub77c\uc774\ube0c!","00350018":"\uac80\uc815\uace0\ubb34\uc2e0","00350004":"\uae30\ud0c0","00720000":"LCK","00820000":"2022 BJ\ub300\uc0c1"}');
+
+	try{
+        DOMAIN = "afreecatv.com";
+	}catch(e){}
+
+	// 국내가 아닐 때 CF로 변경
+	if(szLocalCode != 'KR') {
+		defaultConfig 		= 'https://static.afreecatv.com/asset/service/config/config_global.js';
+	}
+
+	$(document).ready(function() {        
+		livePlayer = new LivePlayer({
+            isDev : isDev,
+            mode : szMode,
+            inflow : szInflow,
+			language : szLang,
+            mutePlay : ('direct' == 'picaplay') ? true : false, //picaPlay 페이지 급하게 수정해야해서 넣어줘야 함
+        });
+		liveView = new LiveView(livePlayer.externalInterface, {
+            isDev : isDev,
+            mode : szMode,
+			language : szLang,
+			isSimpleMode : isSimpleMode
+        });
+
+        liveView.isLoaded().then(function() {
+			if(document.location.search.indexOf('fromApi=') === -1) {
+                livePlayer.loadBroad(szBjId, nBroadNo);
+			}
+		});
+	});
+
+	// if("LiveView" in window && typeof LiveView !== "undefinded") {
+	// 	liveView = new LiveView.default(LivePlayer.externalInterface);
+	// } else {
+	// 	loadViewScript();
+	// }
+	function loadPlayerScript() {
+        // var head = document.getElementsByTagName("head")[0];
+        // var script = document.createElement("script");
+        // //script.src = "https://static.afreecatv.com/asset/app/html5/dist/ko_KR/LivePlayer.min.js";
+        // script.onload = function() {
+        //     livePlayer = new LivePlayer.default(szBjId, nBroadNo, szLang, isDev);
+        // }
+        // head.appendChild(script);
+    }
+	function loadViewScript() {
+        var head = document.getElementsByTagName("head")[0];
+        var script = document.createElement("script");
+        script.src = "https://static.afreecatv.com/asset/app/liveplayer/view/dist/ko_KR/LiveView.min.js";
+        script.onload = function() {
+            liveView = new LiveView(LivePlayer.externalInterface);
+        }
+        head.appendChild(script);
+    }
+    
+    function setClickLog(szCodetype, szSendData, szSysType)
+	{
+		try {
+            oAnalysisUtil.setClickLog(szCodetype, szSendData, ((typeof(szSysType) == 'undefined' || szSysType == null) ? 'html5' : szSysType));
+		} catch (e) {
+		}
+	}
+</script>
+
+	<!--
+	Description  : html 플레이어
+	Author : dk
+
+	공통 관리를 위해 include 로 호출
+	모든 element 수정시 플레이어 기능 영향있을수 있으므로 확인 필요
+	 -->
+
+
+
+	<!--
+	player index 값 정리
+	video 1
+	추천방송 10
+	watermark  15
+	버튼 및  타이틀 20
+	툴팁 30
+	백그라운드 이미지 : 35
+	버퍼링 및 블라인드 40
+	-->
+
+
+
+	<!--
+	상황별 출력 클레스
+	mouseover -> 마우스 오버 시 출력 , 스크립트 로 관리됨
+	live . editor , video , offline  -> 개상황에 따른 출력 컨텐츠들을 관리하는 클레스
+	 -->
+<!-- 2016-1005 embed iframe video 모두 가능-->
+<!-- 플레이어 영역 -->
 <div class="vr_player"></div>
 <div id="afreecatv_player" class="">
 
@@ -365,3 +543,1800 @@
 			</div>
 		</div>
 </div>
+
+
+<!-- //플레이어 영역 -->
+<!-- 채팅 영역 -->
+<!-- 채팅영역 chatting_area-->
+<div id="chatting_area" font-level="1" class="">
+    <div class="move_handle"></div><!--채팅 영역 조절-->
+    <!-- chatbox -->
+    <div id="chatbox" class="chatbox">
+        <!-- 2020-0214 -->
+        <div class="chat_blind" style="display: none;">
+            <div>
+                <p>채팅 팝업 상태입니다.</p>
+                <button type="button">채팅 불러오기</button>
+            </div>
+        </div>
+        <div class="area_header">
+            <div class="chat_move_wrap" tip="">
+                <button class="chat_move"></button><!--채팅 좌우 이동-->
+                <div class="tooltip" style="display: none;">
+                    <p>좌/우로 자유롭게 이동해보세요!</p>
+                    <button type="button" class="close">닫기</button>
+                </div>
+            </div>
+            <h2>
+                <span>채팅</span>
+                <a href="javascript:;" id="chatbox_btn_org" style="display:none">본방입장</a>
+            </h2>
+            <!-- 세팅 버튼들 -->
+            <ul id="btnset">
+                <li id="setbox_chatnotice" class="c-notice" style="display:none;">
+                    <a href="javascript:;" class="" tip="BJ 공지">BJ 공지</a>
+                </li>
+                <li id="setbox_mchat" class="mchat" style="display:none;">
+                    <a href="javascript:;" class="off" tip="매니저 채팅">매니저 채팅</a>
+                </li>
+                <li id="setbox_kicklist" class="c-out" style="display:none;">
+                    <a href="javascript:;" class="off" tip="강제퇴장인원">강제퇴장인원</a>
+                </li>
+                <li id="setbox_ice" class="ice" style="display:none;">
+                    <a href="javascript:;" class="freeze" tip="얼리기">얼리기</a>
+                </li>
+                <li id="setbox_viewer" class="viewer">
+                    <a href="javascript:;" class="off" tip="채팅참여인원">채팅참여인원</a>
+                </li><!-- 활성화  class="on" 추가 -->
+                <li id="setbox_set" class="set">
+                    <a href="javascript:;" class="off" tip="설정">설정</a>
+                </li>
+                <li id="setbox_close" class="close">
+                    <a href="javascript:;" class="tip-right" tip="채팅영역 숨기기">채팅영역 숨기기</a>
+                </li>
+            </ul>
+            <!-- //세팅 버튼들 -->
+            <!-- idsearch 2015-07-31 추가 -->
+            <div id="idsearch" class="idsearch" style="display:none;">
+                <input type="text" id="searchId" class="input_text" title="아이디" placeholder="아이디" />
+                <!-- SORT -->
+                <div class="sel"><!-- 1개나 첫번째엔 first 추가 -->
+                    <a href="javascript:;" id="selChatOpt">채팅금지</a>
+                    <ul id="selChatOptList" style="display: none;">
+                        <li><a href="javascript:;">채팅금지</a></li>
+                        <li><a href="javascript:;">강제퇴장</a></li>
+                        <!-- <li><a href="javascript:;">블랙리스트 추가</a></li> -->
+                        <li><a href="javascript:;">매니저 임명/해임</a></li>
+                    </ul>
+                </div>
+                <!-- //SORT -->
+                <a id="applyChatOpt" href="javascript:;" class="btn_apply">적용</a>
+            </div>
+            <!-- //idsearch -->
+            <!-- 채팅 공지, 타임광고 -->
+            <div class="chat_topbox">
+                <!-- 채팅 공지 -->
+                <div class="chat_notice "> <!-- 클래스 open 추가 공지 열기 -->
+                    <span class="ico new"><em></em></span> <!-- 새 공지 작성시 new 클래스 추가 -->
+                    <div class="msg">
+                        <p></p>
+                    </div>
+                    <a href="javascript:;" class="btn_chat_notice"><span>채팅 공지 열고 닫기</span></a>
+                </div>
+                <!-- //채팅 공지 -->
+                <!-- 타임 광고 -->
+                <a href="javascript:;" class="time_ad"></a>
+                <!-- //타임 광고 -->
+            </div>
+            <!-- //채팅 공지, 타임광고 -->
+        </div>
+        <!-- dashboard 얼리기 옵션 -->
+        <div class="ui-pop setting_freeze" id="setting_freeze" style="display: none">
+            <p class="pop-title">채팅방 얼리기</p>
+            <div class="pop-body">
+                <p>BJ와 아래 선택한 등급은<br>채팅창을 얼려도 채팅이 가능합니다.</p>
+                <dl>
+                    <dt>본방</dt>
+                    <dd>
+                        <p>얼린 후 채팅 참여 등급</p>
+                        <ul id="origin_freeze_ul">
+                            <li><label for="origin_freeze_0"><input type="checkbox" id="origin_freeze_0">열혈팬</label></li>
+                            <li><label for="origin_freeze_1"><input type="checkbox" id="origin_freeze_1">구독팬</label></li>
+                            <li><label for="origin_freeze_2"><input type="checkbox" id="origin_freeze_2">팬클럽</label></li>
+                            <li><label for="origin_freeze_3"><input type="checkbox" id="origin_freeze_3">서포터</label></li>
+                            <li><label for="origin_freeze_4"><input type="checkbox" id="origin_freeze_4">매니저</label></li>
+                        </ul>
+                        <button type="button" class="on" id="origin_chat_ice_btn" state="ice_on">얼리기</button>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>
+                        중계방
+                        <div class="tip">
+                            <em></em>
+                            <div>
+                                <p>모든 중계방이 한번에<br> 얼리기/녹이기 됩니다.</p>
+                                <p>각 중계방에 대한 얼리기는<br> 해당 방에서만 가능합니다.</p>
+                            </div>
+                        </div>
+                    </dt>
+                    <dd>
+                        <p>얼린 후 채팅 참여 등급</p>
+
+                        <ul id="relay_freeze_ul">
+                            <li><label for="relay_freeze_0"><input type="checkbox" id="relay_freeze_0">열혈팬</label></li>
+                            <li><label for="relay_freeze_1"><input type="checkbox" id="relay_freeze_1">구독팬</label></li>
+                            <li><label for="relay_freeze_2"><input type="checkbox" id="relay_freeze_2">팬클럽</label></li>
+                            <li><label for="relay_freeze_3"><input type="checkbox" id="relay_freeze_3">서포터</label></li>
+                            <li><label for="relay_freeze_4"><input type="checkbox" id="relay_freeze_4">매니저</label></li>
+                        </ul>
+                        <button type="button" class="on" id="relay_chat_ice_btn" state="ice_on">얼리기</button>
+                    </dd>
+                </dl>
+            </div>
+            <a href="javascript:;" class="pop-close"><span>레이어 닫기</span></a>
+        </div>
+
+        <!-- 레이어_시청자리스트 -->
+        <div class="chat_layer list_participant" id="list_viewer">
+            <div class="area_header">
+                <h2><span>채팅참여인원</span></h2>
+            </div>
+
+            <div id="userList" class="contents">
+                <div class="effective_box">
+                    <div class="effective_list"></div>
+                </div>
+            </div>
+
+            <div class="none" style="display: none;">
+                <div>
+                    <em>%</em> 에 대한 <br>검색결과가 없습니다.                    <p>확인 후 다시 검색해주세요.</p>
+                </div>
+            </div>
+
+            <button class="more">펼치기 / 닫기</button>
+            <a href="javascript:;" class="close">닫기</a>
+        </div>
+        <!-- //레이어_시청자리스트 -->
+
+        <div class="chat_layer_setting">
+            <div class="chat_layer setting_chat">
+                <div class="area_header"><h2><span>채팅 설정</span></h2></div>
+                <div class="contents">
+                    <ul>
+                        <li><a href="javascript:;" class="more_layer" data-title="mark">채팅창 표시 방법</a></li>
+                        <li><a href="javascript:;" class="more_layer" data-title="person">개인 설정</a></li>
+                    </ul>
+                    <ul style="display: none;">
+                        <li style="display: none;"><a href="javascript:;" class="more_layer" data-title="manage">채팅 관리</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="javascript:;" id="clear_chat">채팅 지우기</a></li>
+                        <li><a href="javascript:;" id="popout_chat">채팅 팝업</a></li>
+                        <li><a href="javascript:;" id="chat_rules">채팅 규칙 보기</a></li>
+                    </ul>
+                    <div class="font-level">
+                        <span>채팅 크기 설정</span>
+                        <div class="ctrl">
+                            <input type="text" value="1" readonly="">
+                            <button class="minus">-</button>
+                            <button class="plus">+</button>
+                        </div>
+                        <div class="preview" font-level="1">
+                            <dl>
+                                <dt class="man">
+                                    <em></em>
+                                    <img src="https://res.afreecatv.com/images/chat/ic_chat/ic_fanclub.svg">
+                                    <img src="https://res.afreecatv.com/images/chat/ic_chat/ic_quick.svg">
+                                    <a href="javascript:;">아프리카TV</a> :
+                                </dt>
+                                <dd>안녕하세요</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <a href="javascript:;" class="close">닫기</a>
+            </div>
+
+            <div class="chat_layer sub mark">
+                <div class="area_header">
+                    <a href="javascript:;" class="history_back">뒤로가기</a>
+                    <h2><span>채팅창 표시 방법</span></h2>
+                </div>
+                <div class="contents">
+                    <ul>
+                        <li>
+                            <div class="checkbox_wrap">
+                                <input type="checkbox" id="st1_emoticon">
+                                <label for="emoticon_view">이모티콘 보기</label>
+                            </div>
+                        </li>
+                        <li>
+							<div class="checkbox_wrap">
+								<input type="checkbox" id="st1_emoticon_ani">
+								<label for="emoticon_ani">이모티콘 움직이기</label>
+							</div>
+						</li>
+                        <li>
+                            <div class="checkbox_wrap">
+                                <input type="checkbox" id="st1_ogq">
+                                <label for="emoticon_small">OGQ 이모티콘 작게보기</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="checkbox_wrap">
+                                <input type="checkbox" id="st1_joinout">
+                                <label for="participant_view">참여자 출입 표시</label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <a href="javascript:;" class="close">닫기</a>
+            </div>
+
+            <div class="chat_layer sub person">
+                <div class="area_header">
+                    <a href="javascript:;" class="history_back">뒤로가기</a>
+                    <h2><span>개인 설정</span></h2>
+                </div>
+                <div class="contents">
+                    <ul>
+                        <li>
+                            <a href="javascript:;" class="title" id="change_nickname">닉네임 변경</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="title" id="change_subscription_nickname" style="display: none;">구독 닉네임 변경</a>
+                        </li>
+                        <li>
+                            <div class="checkbox_wrap">
+                                <input type="checkbox" id="st1_whisper">
+                                <label for="whisper_receive">귓속말 수신 허용</label>
+                            </div>
+                        </li>
+                        <li style="display: none;">
+                            <div class="checkbox_wrap">
+                                <input type="checkbox" id="st1_trans">
+                                <label for="global_translation">해외 언어 번역</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="checkbox_wrap">
+                                <input type="checkbox" id="st1_fanchatcolor">
+                                <label for="fan_color">팬채팅 색상 사용</label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <a href="javascript:;" class="close">닫기</a>
+            </div>
+
+            <div class="chat_layer sub manage">
+                <div class="area_header">
+                    <a href="javascript:;" class="history_back">뒤로가기</a>
+                    <h2><span>채팅 관리</span></h2>
+                </div>
+                <div class="contents">
+                    <ul>
+                        <li style="display: none;"><a href="javascript:;" id="manage_relay">중계방 관리</a></li>
+                        <li style="display: none;">
+                            <div class="checkbox_wrap">
+                                <input type="checkbox" id="st1_ban_msg">
+                                <label for="global_translation">강제퇴장메시지 유저에게 보이기</label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <a href="javascript:;" class="close">닫기</a>
+            </div>
+        </div>
+
+
+        <!-- 2018-0118 채팅 하단 이동 버튼 추가 -->
+        <div class="chat_scroll_down">
+            <button type="button">채팅 아래로 스크롤</button>
+        </div>
+        <!-- //2018-0118 채팅 하단 이동 버튼 추가 -->
+        <!-- 2019-1202  on 클레스 추가시 출력  -->
+        <div class="emoticon_output">
+            <button type="button" class="btn_output"><img src="" onerror="this.src='https://res.afreecatv.com/images/chat/ogq_default.png'" alt=""></button>
+            <button type="button" class="close"><span>닫기</span></button>
+        </div>
+        <!-- actionbox -->
+        <div id="actionbox" class="actionbox">
+            <!-- 버튼들 -->
+            <ul id="ul1" class="ul1">
+                <li id="btn_emo" class="emo first off"><a href="javascript:;" tip="이모티콘">이모티콘</a><span class="emo_tiplayer" id="emoLayer" style="display:none;"><em class="txt"></em><span class="icon"></span><button type="button" class="close">닫기</button></span></li><!-- 활성화  class="on" 추가 -->
+                <li id="btn_police" class="police off"><a href="javascript:;" tip="신고">신고</a></li>
+                <li id="btn_translation" class="translation" style="display:none;"><em></em><a href="#n" tip="번역">번역</a></li>
+            </ul>
+            <ul id="ul2" class="ul2">
+                <li id="btn_star" class="star off"><a href="javascript:;" tip="별풍선 선물하기">별풍선 선물하기</a></li>
+                <li id="btn_adballoon" class="adballoon off"><a href="javascript:;" tip="애드벌룬 선물하기">애드벌룬 선물하기</a></li>
+                <li id="btn_sticker" class="sticker off"><a href="javascript:;" tip="스티커 선물하기">스티커 선물하기</a></li>
+                <li class="game_point off" style="display:none;">
+                    <a href="javascript:;" tip="젬(Gem)">젬(Gem)<span class="ic_new"></span></a>
+                    <div class="game_point_layer" style="display:none;">
+                        <p><em>젬</em>을 모아 이모티콘 오픈, 응모,  <br> 승부예측 등 다양한 활동에 참여해보세요!</p>
+                        <button class="close">닫기</button>
+                    </div>
+                </li>
+            </ul>
+            <div class="ic_gem" style="display:none;"></div>
+            <!-- //버튼들 -->
+            <div class="translation_select">
+                <div class="translation_select_con">
+                    <div class="select_btn off"> <!-- on off 로 리스트 출력 -->
+                        <a href="#n"><span id="trans_selected_lang" data="zh_CN" langCode="4">중국어 간체</span><em></em></a>
+                        <ul>
+                            <li class="translation_lang"><a href="#n" data="zh_CN" langCode="4">중국어 간체</a></li>
+                            <li class="translation_lang"><a href="#n" data="zh_TW" langCode="5">중국어 번체</a></li>
+                                                        <li class="translation_lang"><a href="#n" data="ja_JP" langCode="2">일본어</a></li>
+                            <li class="translation_lang"><a href="#n" data="en_US" langCode="1">영어</a></li>
+                            <li class="translation_lang"><a href="#n" data="th_TH" langCode="6">태국어</a></li>
+                            <li class="translation_lang"><a href="#n" data="vi_VN" langCode="7">베트남어</a></li>
+                        </ul>
+                    </div><span>로</span><button type="button" id="trans_submit">번역</button>
+                </div>
+            </div>
+            <!-- chat_write -->
+            <div id="chat_write" class="chat_write">
+                <h3>채팅쓰기</h3>
+                <div class="ad_toggle">
+                        <span class="blue">
+                            <input id="manage" type="radio" name="managerchat" checked="checked" class="on" data-message-type="1">
+                            <label for="manage" class="on">운영</label>
+                        </span>
+                    <span class="red">
+                            <input id="warning" type="radio" name="managerchat" data-message-type="2">
+                            <label for="warning">경고</label>
+                        </span>
+                </div>
+                <div id="write_area" class="write_area" contenteditable="true" ondragenter="return false;" ondrop="return false;" ondragover="return false;" placeholder="채팅 입력 (C)"></div>
+            <button type="button" id="btn_send" class="btn_send" title="보내기" placeholder="채팅 입력 (C)">보내기</button>
+        </div>
+        <!-- //chat_write -->
+        <!-- vote button -->
+        <div class="poll_layer" id="layer_poll">
+            <!-- <a href="javascript:;" class="poll"><span>투표하기</span>새 투표가 시작되었습니다.</a>
+<a href="#" class="poll_end"><span>투표 마감</span>투표가 마감되었습니다.</a>//
+<a href="#" class="poll_result"><span>투표 결과</span>투표결과가 발표되었습니다.</a>//
+<button type="button" class="btn_close" onclick="document.getElementById('layer_poll').style.display='none'"><span class="blind">닫기</span></button> -->
+        </div>
+        <!-- //vote button -->
+    </div>
+    <!-- //actionbox -->
+
+    <!-- 레이어_이모티콘 2015-09-07 추가 -->
+    <div id="emoticonArea">
+        <div id="emoticonBox" class="ogq">
+            <div class="tab_area">
+                <ul>
+                    <li><a href="javascript:;">이모티콘</a></li>
+                </ul>
+                <div class="item_list">
+                    <button class="prev off">이전</button> <!-- off 클레스로 비활성화  -->
+                    <div>
+                        <ul>
+                            <li class="on" data-type="RECENT"><button type="button" class="ic_clock"></button></li>
+                            <li data-type="SUBSCRIPTION"><button type="button"><img src="https://res.afreecatv.com/images/webplayer/chat/icon_small1.png" alt="구독"></button></li>
+                            <li data-type="DEFAULT"><button type="button"><img src="https://res.afreecatv.com/images/webplayer/chat/icon_small2.png" alt="AF기본"></button></li>
+                        </ul>
+                    </div>
+                    <button class="next off">다음</button> <!-- off 클레스로 비활성화  -->
+                </div>
+            </div>
+
+            <!-- 최근 사용 이모티콘 탭 -->
+            <ul class="tab_area2" style="display: none;">
+                <li class="on" data-type="DEFAULT"><a href="javascript:;"><span>이모티콘</span></a></li>
+                <li class="" data-type="OGQ"><a href="javascript:;"><span>구매 이모티콘</span></a></li>
+            </ul>
+            <!-- // 최근 사용 이모티콘 탭 -->
+
+            <div class="scroll_area recent_emoticon recent_emoticon_default"> </div>
+            <div class="scroll_area recent_emoticon recent_emoticon_ogq" style="display: none;" > </div>
+
+            <div class="scroll_area subscription_emoticon" style="display: none;">
+                <!-- <div class="sg_area"></div> -->
+            </div>
+            <div class="scroll_area common_emoticon"></div>
+            <div class="btn_close"><a href="javascript:;" title="닫기">닫기</a></div>
+        </div>
+    </div>
+    <!-- //레이어_이모티콘 -->
+
+    <div id="chat_area" class="chat_area"></div>
+    <!-- //chat_area -->
+
+    <!-- 광고배너 ti_wrap3 플래시 채팅창TI 214*400px 2015-11-19 추가 -->
+    <div id="chat_ad" class="chat_banner" style="display:none;"><div class="ti_in">
+            <a href="javascript:;"></a>
+            <a href="javascript:;"><img src="https://res.afreecatv.com/new_player/img/btn_adclose.png" class="btn_close" alt="닫기"></a>
+        </div></div>
+    <!-- //광고배너 ti_wrap3 -->
+    </div>
+    <!-- //chatbox -->
+
+    <div id="chat_container_chat_rules" class="chat_rule"> <!-- on 클레스 추가로 출력 -->
+        <div class="chat_rule_title">
+        </div>
+        <div class="chat_rule_contents">
+            <div class="box">
+            </div>
+        </div>
+        <div class="footer">
+            <button id="agree_button" type="button">규칙에 동의합니다!</button>
+            <button id="close_button" type="button">닫기</button>
+        </div>
+    </div>
+</div>
+<!-- //채팅영역 chatting_area-->
+<!-- //채팅 영역-->
+<!-- //채팅 팝업과 공통 레이어 영역 -->
+<!-- 이동가능한 레이어 위치 -->
+<div class="moveLayer">
+	<!-- //매니저 채팅 -->
+	<div id="layer_mchat" class="layer_mchat" style="display: none;">
+		<h2>매니저 채팅<button type="button" id="btn_mchat_clear" tip="채팅 지우기">채팅 지우기</button></h2>
+		<a class="btn_close" href="javascript:;">닫기</a>
+		<!-- sendbox -->
+		<div class="sendbox">
+			<!--input type="text" id="m_write_area" class="input" /-->
+			<div><textarea id="m_write_area" class="input" style="resize:none;"></textarea></div>
+			<a class="send" id="m_btn_send" href="javascript:;">보내기</a>
+		</div>
+		<!-- //sendbox -->
+		<!-- mchatlist -->
+		<div id="mchatlist" class="mchatlist">
+			<div id="m_chat_area" class="m_chat_area">
+				<div id="m_chat_memoyo" class="chat_memoyo">
+				</div>
+			</div>
+		</div>
+		<!-- //mchatlist -->
+	</div>
+	<!-- //매니저 채팅 -->
+	<!--채팅지킴이 관리목록 width:364px;height:494px-->
+	<div class="chat-keeper" id="adminManagerList" style="display: none;">
+		<div class="layer_in">
+			<strong class="title">채팅지킴이 관리목록</strong>
+			<div class="inwrap">
+				<div class="section relay">
+					<strong>BJ중계방</strong>
+					<div class="box_tb">
+						<table cellspacing="0" cellpadding="0" id="relayBroadList"><!--160830 span 추가-->
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="btn_wrap">
+				<a href="javascript:;" class="btn_st2">닫기</a>
+			</div>
+			<a href="javascript:;" class="btn_close2">닫기</a>
+		</div>
+	</div>
+	<!--//채팅지킴이 관리목록-->
+
+	<!--매니저 중계방 관리 목록-->
+	<div class="ui-pop relay" id="relayBroadManageList" style="display: none;">
+		<div class="pop-title"><p>중계방 관리</p>
+			<button type="button" class="btn_refresh"><span class="blind">새로고침</span></button>
+		</div>
+		<div class="pop-body">
+			<p class="txt">
+				BJ와 고정 매니저만 본방, 중계방을 관리할 수 있습니다. 				<br>
+				(단, FULL방은 열혈팬이거나 퀵뷰를 보유해야만 입장가능)			</p>
+			<div class="tbl">
+				<table>
+					<colgroup>
+						<col style="width:60px;">
+						<col style="width:80px;">
+						<col style="width:100px;">
+						<col>
+					</colgroup>
+					<thead>
+					<tr>
+						<th>구분</th>
+						<th>방송번호</th>
+						<th>인원(PC/MOBILE)</th>
+						<th>입장</th>
+					</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="pop-btn line">
+			<a href="javascript:;" class="btn">닫기</a>
+		</div>
+		<a href="javascript:;" class="pop-close"><span>닫기</span></a>
+	</div>
+	<!--//매니저 중계방 관리 목록-->
+</div>
+<!-- //이동가능한 레이어 위치 -->
+
+<!-- 고정된 레이어 위치 -->
+<div class="fixLayer">
+    <!-- 방송진단 레이어 -->
+    <div class="ui-pop diagnose" id="layerCheckPlayerState" style="display:none;">   <!--  scroll 클레스 추가시 컨텐츠 스크롤 되며 헤더 스타일 변경 -->
+        <p class="pop-title">내 상태 진단하기<span>방송참여에 문제가 있을 때 확인해보세요.</span></p>
+        <div class="pop-body">
+            <div class="scroll_box">
+                <dl id="playerStateServer" class="align-center">
+                    <dt><em class="icon connect"></em> 방송 접속 상태</dt>
+                    <dd>
+                        <div class="state">진단 대기중</div>
+                        <p class="progress_bar" style="display: none;"><span style="width:0%;"></span></p>
+                        <ul class="info">
+                        </ul>
+                    </dd>
+                </dl>
+
+                <dl id="playerStateAgent" class="align-center">
+                    <dt><em class="icon high-definition"></em>고화질 스트리머</dt>
+                    <dd>
+                        <div class="state">진단 대기중</div>
+                        <p class="progress_bar" style="display: none;"><span style="width:0%;"></span></p>
+                        <ul class="info">
+                        </ul>
+                    </dd>
+                </dl>
+
+                <dl id="playerStateChat" class="align-center">  <!--  open 클레스 추가시 하단 정보영역 출력-->
+                    <dt><em class="icon chatting"></em>채팅 접속 상태</dt>
+                    <dd>
+                        <div class="state">진단 대기중</div>
+                        <p class="progress_bar" style="display: none;"><span style="width:0%;"></span></p>
+                        <ul class="info">
+                        </ul>
+                    </dd>
+                </dl>
+
+                <dl id="playerStateNetwork" class="align-center">
+                    <dt><em class="icon network"></em>네트워크 상태</dt>
+                    <dd>
+                        <div class="state">진단 대기중</div>
+                        <p class="progress_bar" style="display: none;"><span style="width:0%;"></span></p>
+                        <ul class="info">
+                        </ul>
+                    </dd>
+                </dl>
+
+                <dl id="playerStateSpeed" class="align-center">
+                    <dt><em class="icon internet"></em>인터넷 속도</dt>
+                    <dd>
+                        <div class="state">진단 대기중</div>
+                        <p class="progress_bar" style="display: none;"><span style="width:0%;"></span></p>
+                        <ul class="info">
+                        </ul>
+                    </dd>
+                </dl>
+
+                <div class="pop-btn">
+                    <a href="javascript:;" class="btn btn_blue btn_check_start">진단 시작하기</a>  <!-- off 클레스 추가 시 비활성화 -->
+                </div>
+            </div>
+        </div>
+        <a href="javascript:;" class="pop-close"><span>레이어 닫기</span></a>
+    </div>
+    <!-- //방송진단 레이어 -->
+    <!-- 강제퇴장인원 -->
+    <div class="wrap-out" id="layerKickList" style="display:none;">
+        <div class="layer_in">
+            <strong class="title">강제퇴장인원</strong>
+            <div class="total_p"><strong class="total">총 인원</strong> (<strong id="kickListCount">0</strong>명)</div>
+            <div class="list_area">
+                <div class="list-head">
+                    <strong class="nic">닉네임(아이디)</strong>
+                    <strong class="time">적용 시간</strong>
+                    <strong class="sysop">적용 BJ/매니저</strong>
+                    <strong class="out">강제퇴장</strong>
+                </div>
+                <div class="list-body">
+                    <ul id="kickList">
+                    </ul>
+                </div>
+            </div>
+            <button type="button" id="refreshKickList" class="btn_refresh"><span class="blind">새로고침</span></button>
+            <div class="btn_wrap"><a href="javascript:;" class="btn_st2">닫기</a></div>
+            <a href="javascript:;" class="btn_close2">닫기</a>
+        </div>
+    </div>
+    <!-- //강제퇴장인원 -->
+
+    <!-- 방송 신고 접수 -->
+    <div class="layer_m" id="layerReport"><div class="layer_in">
+        <strong class="title">방송 신고 접수</strong>
+        <div class="layer_ac">
+            <strong class="color_blk">이 방송을 어떤 문제로 신고하시겠습니까?</strong><br />
+            <span class="fts11_pdt5">지속적인 허위 신고 접수 시<br />서비스 이용이 제한될 수 있습니다.</span>
+        </div>
+        <div class="report_box">
+            <div class="gift_img">퀵뷰아이템 이용권"</div>
+            <div class="text">
+                <em>불법 사설 도박, 음란물 신고시<br />추첨을 통해 <strong class="color_bl">퀵뷰 30일 이용권</strong>을 드립니다.</em>
+                <a href="https://afwbbs1.afreecatv.com/app/index.php?board=notice&b_no=3247&control=view" target="_blank">신고보상 자세히 보기</a>
+            </div>
+        </div>
+        <div class="btn_wrap"><a href="javascript:;" id="reportToto" class="btn_st1">불법사설 도박 신고</a> <a href="javascript:;" id="reportAdult" class="btn_st1">음란물 신고</a> <a href="https://help.afreecatv.com/atv.php?type=exMailDeclare" class="btn_st2" target="_blank">기타신고</a></div>
+        <a href="javascript:;" class="btn_close2">닫기</a>
+    </div></div>
+    <!-- //방송 신고 접수 -->
+
+    <!-- 음란물로 신고하겠습니까? -->
+    <div class="layer_m" id="layerReportAdult"><div class="layer_in">
+        <div class="layer_ac">
+            <strong class="color_blk">본 방송(BJ ID : <span class="color_bl">%s</span>)을<br />음란물로 신고하겠습니까?</strong>
+            <span class="icon_exc">&apos;신고&apos; 버튼을 누르는 시점의 방송 화면이 <br />자동 저장되어 접수 됩니다</span>
+        </div>
+        <div class="btn_wrap_line"><a href="javascript:;" class="btn_st1">신고</a> <a href="javascript:;" class="btn_st2">취소</a></div>
+        <a href="javascript:;" class="btn_close">닫기</a>
+    </div></div>
+    <!-- //음란물로 신고하겠습니까? -->
+
+    <!-- 불법 사설 도박으로 신고하겠습니까? 2015-12-10 추가 -->
+    <div class="layer_m" id="layerReportToto"><div class="layer_in">
+        <div class="layer_ac">
+            <strong class="color_blk">본 방송(BJ ID : <span class="color_bl"></span>)을<br />불법 사설 도박으로 신고하시겠습니까?</strong>
+            <span class="icon_exc">&apos;신고&apos; 버튼을 누르는 시점의 방송 화면이 <br />자동 저장되어 접수 됩니다</span>
+        </div>
+        <div class="btn_wrap_line"><a href="javascript:;" class="btn_st1">신고</a> <a href="javascript:;" class="btn_st2">취소</a></div>
+        <a href="javascript:;" class="btn_close">닫기</a>
+    </div></div>
+    <!-- //불법 사설 도박으로 신고하겠습니까? -->
+    <!-- 별풍선 선물하기 -->
+    <div class="layer_l" id="layerStarGift"><div class="layer_in">
+        <strong class="title">별풍선 선물하기</strong>
+        <div class="layer_al">
+            <strong class="color_blk">별풍선이란?</strong> &nbsp; <a href="https://item.afreecatv.com/starballoon.php" target="_blank" class="color_bl fts11">별풍선 헤택이 궁금하다면 클릭!</a><br />
+            <ul class="sub_list2">
+                <li>참여자가 BJ에게 선물할 수 있는 유료 아이템입니다. <br /><span class="fts11 color_gray">(BJ는 별풍선을 환전하여 실제수익으로 돌려받게 됩니다.)</span></li>
+                <li>별풍선을 선물하시면 자동으로 BJ 팬클럽에 가입이 됩니다. <br /><span class="fts11 color_gray">(팬클럽 이모티콘 표시 / 팬클럽 전용 채팅컬러 제공)</span></li>
+            </ul>
+            <ul class="table_list">
+                <li><span><em>별풍선을 선물할 BJ</em> : </span><strong class="color_bl"></strong></li>
+                <li><span><em>내가 보유한 별풍선</em> : </span>0개 <a href="javascript:;" class="btn_st3">별풍선 구매</a></li>
+                <li>
+                    <span><em>선물할 별풍선</em> : </span>
+                    <fieldset class="select_area">
+                        <legend>선물할 별풍선 선택</legend>
+                        <input type="radio" name="optStarBalloon" label="no5" class="input_radio" value="5" checked /> <label for="no5">5개</label> &nbsp;
+                        <input type="radio" name="optStarBalloon" label="no10" class="input_radio" value="10" /> <label for="no5">10개</label> &nbsp;
+                        <input type="radio" name="optStarBalloon" label="no50" class="input_radio" value="50" /> <label for="no5">50개</label> &nbsp;
+                        <input type="radio" name="optStarBalloon" label="no100" class="input_radio" value="100" /> <label for="no5">100개</label><br />
+                        <em><input type="radio" label="write" name="optStarBalloon" value="-1" class="input_radio" /> 직접입력 <input type="text" id="nStarBalloon" class="input_text" style="width:60px" maxlength="5" disabled /> 개</em>
+                    </fieldset>
+
+                </li>
+            </ul>
+        </div>
+        <div class="btn_wrap"><a href="javascript:;" class="btn_st1">선물하기</a> <a href="javascript:;" class="btn_st2">취소</a></div>
+        <a href="javascript:;" class="btn_close2">닫기</a>
+    </div></div>
+    <!-- //별풍선 선물하기 -->
+
+    <!-- 별풍선 선물하기 신규(국내만) -->
+    <div class="pop_stargift" id="layerStarGiftNew">
+    <div class="layer_in">
+        <div class="loading"><span></span></div>
+        <div class="guide_layer" style="display:none">
+            <a href="javascript:;" class="close sub">close</a>
+            <div class="guide_step1">
+                <strong>1. VOD 주소입력</strong>
+                <p>재생수 100 / UP 20 이상의 <br>다시보기, 하이라이트, <br> 업로드 VOD, 유저 VOD 중 선택</p>
+            </div>
+            <div class="guide_step2">
+                <strong>2. 재생 시작 시간 입력</strong>
+                <p>선물하고 싶은 구간의 재생 시작시간 입력 <br> 단, VOD에 따라 오차가 발생할 수 있음</p>
+            </div>
+            <div class="guide_step3">
+                <strong>3. 선물할 별풍선 개수 입력</strong>
+                <p>1초당 별풍선 N개 <br> 최소 5초 ~ 최대 SS초까지 선물 가능 </p>
+            </div>
+            <p>영상풍선 선물 설정은 BJ의 설정에 따라 변경 됩니다.</p>
+        </div>
+        <span class="lightbox"></span>
+        <h2>
+            <a href="javascript:;" class="on">별풍선 선물하기</a>
+            <a href="javascript:;">대결미션</a>			
+            <a href="javascript:;">영상풍선 선물하기</a>
+        </h2>
+        <a href="javascript:;" class="what_star">별풍선이란?</a>
+        <!-- 별풍선이란? 레이어 -->
+        <div class="star_info_layer">
+            <div class="inner">
+                <div class="info_b">
+                    <span class="img"></span>
+                    <dl>
+                        <dt>별풍선이란?</dt>
+                        <dd>참여자가 BJ를 응원하고 후원할 수 있는<br>유료 선물 시스템입니다.</dd>
+                        <dd>별풍선을 선물하면 자동으로 BJ 팬클럽<br>에 가입 됩니다.</dd>
+                        <dd>선물받은 BJ는 별풍선을 환전하여 실제<br>수익으로 돌려 받게 됩니다.</dd>
+                    </dl>
+                    <a href="https://item.afreecatv.com/starballoon.php" target="_blank" class="btn_detail">상세보기</a>
+                </div>
+                <div class="info_sgb">
+                    <span class="img"></span>
+                    <dl>
+                        <dt>시그니처 풍선이란?</dt>
+                        <dd>BJ의 개성이 돋보이도록 직접 만들어<br>등록하는 맞춤형 별풍선입니다.</dd>
+                    </dl>
+                    <a href="https://afevent2.afreecatv.com/app/signature_balloon/index.php" target="_blank" class="btn_detail">상세보기</a>
+                </div>
+                <!-- 영상풍선일때만 보여짐 -->
+                <div class="info_sgb">
+                    <span class="img video_balloon_img"></span>
+                    <dl>
+                        <dt>영상풍선 혜택보기</dt>
+                        <dd>별풍선에 좋아하는 VOD를 담아서 <br> 선물하는 서비스 입니다. <br> 원하는 재생구간을 설정하여 선물할 수 있습니다. </dd>
+                    </dl>
+                </div>
+                <a href="javascript:;" class="btn_close sub">닫기</a>
+            </div>
+        </div>
+        <!-- //별풍선이란? 레이어 -->
+
+        <!-- 대결미션이란? 레이어 -->
+        <div class="mission_info_layer" style="display: none;">
+			<div class="inner">
+				<div class="info_b mission_info">
+					<dl>
+						<dt>대결미션이란?</dt>
+						<dd>BJ가 팀을 이루어 대결 콘텐츠를 진행하고 후원된 별풍선을 대결<br>결과에 따라 나눠가지는 기능입니다.</dd>
+						<dd>현재 시청중인 BJ에게 별풍선 후원하는 것이 아닌 대결미션에<br>별풍선 후원하여 별풍선을 모금하였다가 결과에 따라 모금된<br>별풍선을 참여 BJ에게 전달합니다.</dd>
+						<dd>별풍선 후원 시 해당 방송의 팬클럽 가입과 열혈팬 순위에 집계됩니다.</dd>
+					</dl>
+				</div>
+				<a href="#" class="btn_close">닫기</a>
+			</div>
+		</div>
+
+
+        <!-- 전자비서 목소리 선택 -->
+        <div class="voice_selector_box" style="display: none;">
+            <h4>목소리를 선택해주세요</h4>
+
+            <ul id="aqua_voice_select_container">
+            </ul>
+            <div class="voice_selector_footer" style="display: none;">
+                <p>알림음 목소리 아이템을 사용할 수 있도록 <strong>BJ에게 스티커를 선물해보세요!</strong></p>
+                <a href="javascript:;">스티커 선물하기</a>
+            </div>
+            <a href="javascript:;" class="close"></a>
+        </div>
+        <!-- // 전자비서 목소리 선택 -->
+        <div id="common_container_chat_rules" class="chat_rule"> <!-- on 클레스 추가로 출력 -->
+            <div class="chat_rule_title">
+            </div>
+            <div class="chat_rule_contents">
+                <div class="box">
+                </div>
+            </div>
+            <div class="footer">
+                <button id="agree_button" type="button">규칙에 동의합니다!</button>
+                <button id="close_button" type="button">닫기</button>
+            </div>
+        </div>
+        
+        <!-- 별풍선 -->
+        <div class="tab1">
+            <div class="star_list">
+                <p>시그니처 풍선은 BJ만의 특별한 풍선입니다.</p> <!-- 시그니처 풍선일때 노출-->
+                <div class="input_signature">
+                    <input type="checkbox" id="signature_check" >
+                    <label for="signature_check">100개 이상의 시그니처 풍선 선물시 클립 남기기</label>
+                </div>
+                <ul>
+                    <li><span class="thumb active"><em></em><a href="#"><img src="https://res.afreecatv.com/new_player/items/m_balloon_33.png" alt=""></a></span></li>
+                    <li><span class="thumb"><em></em><a href="#"><img src="https://res.afreecatv.com/new_player/items/m_balloon_100.png" alt=""></a></span></li>
+                    <li><span class="thumb"><em></em><a href="#"><img src="https://res.afreecatv.com/new_player/items/m_balloon_200.png" alt=""></a></span></li>
+                </ul>
+                <!-- 2018-0830 버튼 추가  off 클레스 출력 시 활성 비활성화 -->
+                <div id="signatureArrowBtn">
+                    <button type="button" class="prev off">prev</button>
+                    <button type="button" class="next off">next</button>
+                </div>
+            </div>
+            <div class="send_area">
+                <a href="javascript:;" class="btn_stars change">스타즈 별풍선</a>
+                <!-- 스타즈별풍선 레이어 -->
+                <div class="stars_layer">
+                    <div class="inner">
+                        <h2>스타즈 별풍선</h2>
+                        <div class="tab_area" style="display: none;">
+                            <ul>
+                            </ul>
+                        </div>
+                        <div class="scroll_area">
+                            <ul>
+                            </ul>
+                        </div>
+                        <a href="javascript:;" class="btn_close sub">닫기</a>
+                    </div>
+                </div>
+                <!-- //스타즈별풍선 레이어 -->
+                <dl class="gift_at">
+                <dt>
+                    <strong>nickname(id)</strong>님께 선물                    <div class="checkbox" id="divSequence">
+                        <input type="checkbox" id="sequence_check">
+                        <label for="sequence_check">연속선물</label>
+                        <div class="question">?</div>
+                        <div class="tooltip">연속선물 ON 상태로 선물하면 선물 창이 유지되며,<br>선물할 개수는 선물 완료 후 +1 개로 자동 입력 됩니다.</div>
+                    </div>
+                </dt>
+                <dd class="">
+                    <span class="txt_default">선물할 별풍선</span>
+                    <input type="text" value="10" class="starCount" placeholder="0" autocomplete="Off">
+                    <span class="txt_count">개</span>
+                    <button class="plus" type="button" enable="on">plus</button>
+                    <button class="countReset">Delete</button>
+                </dd>
+                </dl>
+                <dl class="gift_st">
+                    <dt>보유 별풍선</dt>
+                    <dd><span class="userBalloonCount">2,000</span>개</dd>
+                    <dd class="txt_error" style="display:none;"><em></em><span>보유 별풍선 부족</span></dd>
+                </dl>
+                <a href="javascript:;" class="btn_buy">구매</a>
+                <!-- 전자비서 목소리 추가 -->
+                <div class="gift_input" id="aqua_voice_input_container" style="display: none">
+                    <h3>선물 메시지</h3>
+                    <span>
+						<div class="voice_text" id="auqa_voice_textarea" contenteditable="true" ondragenter="return false;" ondrop="return false;" ondragover="return false;" placeholder="전자비서 알림음으로 재생될 채팅 메시지를 입력해주세요."></div>
+						<!--일단 이모티콘은 뺀다 <button type="button" id="aqua_voice_emoticon">이모티콘</button> -->
+					</span>
+                    <!-- 글자수 카운트용 -->
+                    <!-- <p>0/300</p> -->
+                    <p class="noti" style="display: none;" id="noti_in_use_aqua_voice">BJ의 방송 설정에 전자비서가 없거나 별도의 개수 설정이<br>되어있을 경우 알림음 재생이 안될 수 있습니다.</p>
+                    <p class="noti" style="display: none;" id="noti_in_no_use_aqua_voice">BJ가 알림음 목소리 아이템을 미사용 중입니다.<br>아이템을 사용할 수 있도록 스티커를 선물해보세요.</p>
+                    <div class="cover_box">
+                        <p>무료 체험 기간이 종료되었습니다. <br> BJ에게 스티커를 선물하시면 아이템 구매로 이용이 가능합니다.</p>
+                        <a id="aqua_voice_send_sticker" href="javascript:;">스티커 선물하기</a>
+                    </div>
+
+                </div>
+                <div class="btn_voice" id="aqua_voice_select_btn" style="display: none">
+                    <a href="javascript:;" class="voice_selector active">
+                        <img src="//res.afreecatv.com/images/webplayer/layer/icon_luv.png" alt="까칠한 러브">
+                        <span>까칠한 러브</span>
+                    </a>
+                </div>
+                <!-- 전자비서 목소리 추가 -->
+                <div class="btn_area">
+                    <button class="btn_gift">선물하기</button><button class="btn_cancel">취소</button>
+                </div>
+                <p class="txt_info">별풍선을 선물하면 BJ를 후원하고 팬클럽에도 가입됩니다.</p>
+            </div>
+        </div>
+        <!--// 별풍선 -->
+        <!-- 대결미션 -->
+        <div class="tab2 mission" style="display:block;">
+			<div class="section">
+				<h3>MCK 풀래티넘 대전</h3>
+				<div class="section_contents">
+					<!-- LiveView에서 돔생성 -->
+				</div>
+			</div>
+			<div class="send_area">
+				<dl class="gift_at">
+					<dt></dt>
+					<dd>
+						<span class="txt_default">후원할 별풍선</span>
+						<!-- <span class="txt_error">보유 별풍선 부족</span> -->
+						<input type="text" value="10" class="starCount" placeholder="0" class="">
+						<span class="txt_count">개</span>
+						<button class="countReset">Delete</button>
+					</dd>
+				</dl>
+				<dl class="gift_st">
+					<dt>보유 별풍선</dt>
+					<dd><span class="userBalloonCount">2,000</span>개</dd>
+					<dd class="txt_error" style="display:none;"><em></em><span>보유 별풍선 부족</span></dd>
+				</dl>
+				<a href="#" class="btn_buy">구매</a>
+
+				<div class="btn_area">
+					<div class="btn_layer" style="display:none;">
+						보유 별풍선이 즉시 차감됩니다.						<a href="#n" id="tooltipCloseBtn" class="close"></a>
+					</div>
+					<button class="btn_gift">후원하기</button>
+					<button class="btn_cancel">취소</button>
+				</div>
+
+				<p class="txt_info">후원된 별풍선은 대결미션 참가 BJ가 결과에 따라 나누어 가집니다.  <br>
+					별풍선 후원 시 해당 방송의 팬클럽 가입과 열혈팬 순위에 집계됩니다.</p>
+			</div>
+            <div class="mission_dim" style="display: none;">
+				<div class="contents"><p>대결단계에서만 후원 가능합니다.</p></div>
+			</div>
+		</div>
+        <!-- //대결미션 -->
+        <!-- 영상풍선 -->
+        <div class="tab3" style="display:none">
+            <div class="video_balloon_info">
+                <ul>
+                    <li><p>URL</p><span><input type="text" class="vodURL" placeholder="선물할 VOD 주소 입력 "></span></li>
+                    <li><p>재생 시간<em>(최대 25초)</em></p><span><input type="text" class="vodStart" placeholder="00:00:00"></span><p>부터<b>5초</b></p></li>
+                    <li>
+                        <a href="javascript:;"><span></span><em></em></a>
+                    </li>
+                </ul>
+                <div>
+                    <p class="bj_config">재생수 100 / UP 20 이상,<br>다시보기, 하이라이트, 업로드 VOD, 유저 VOD 선물 가능</p>
+                    <p class="txt_error" style="display:none"></p>
+                </div>
+            </div>
+            <div class="send_area">
+                <a href="javascript:;" class="btn_stars">VOD 검색</a>
+                <dl class="gift_at">
+                    <dt><strong>nickname(id)</strong>님께 선물</dt>
+                    <dd>
+                        <span class="txt_default">선물할 별풍선 <em>(1초당 <b>gift_cnt</b>개)</em></span>
+                        <input type="text" value="10" class="starCount" placeholder="0" autocomplete="Off">
+                        <span class="txt_count">개</span>
+                        <button class="countReset">삭제</button>
+                    </dd>
+                </dl>
+                <dl class="gift_st">
+                    <dt>보유 별풍선</dt>
+                    <dd><span class="userBalloonCount">2,000</span>개</dd>
+                    <dd class="txt_error" style="display:none;"><em></em><span>보유 별풍선 부족</span></dd>
+                </dl>
+                <a href="javascript:;" class="btn_buy">구매</a>
+                <div class="btn_area">
+                    <button class="btn_gift">선물하기</button><button class="btn_cancel">취소</button>
+                </div>
+                <p class="txt_info"><a href="javascript:;">영상풍선 선물 설정 방법이 궁금하세요?</a></p>
+            </div>
+        </div>
+        <!--// 영상풍선 -->
+        <a href="javascript:;" class="btn_close">닫기</a>
+    </div>
+    </div>
+    <!-- //별풍선 선물하기 신규(국내만) -->
+    <!-- //애드벌룬 레이어 -->
+    <div id="pop_adballoon" class="pop_adballoon" data-height="800"></div>
+    <!-- //이모티콘 선물하기 레이어 -->
+    <div id="pop_gift_emoticon" class="ui-pop gift-emoticon" style="display:none;"></div>
+    <!-- //구독권 선물하기(국내만) -->
+	<div class="layer_l gd_gift" id="layerSubscriptionGift"><div class="layer_in"> <!-- 팝업버젼 win_pop 클래스 추가 504*408-->
+        <strong class="title">구독 선물하기</strong>
+        <div class="layer_al">
+            <strong class="color_blk">구독이란</strong> &nbsp; <a href="https://item.afreecatv.com/subscription.php#benefit" target="_blank" class="color_bl fts11">구독 혜택이 궁금하다면 클릭!</a><br />
+            <ul class="sub_list2">
+                <li>구독은 좋아하는 BJ를 후원하고<br />본방 입장, 구독 전용 닉네임 등 다양한 혜택을 받을 수있는 정기 후원입니다.</li>
+            </ul>
+            <ul class="table_list">
+                <li><span>구독 대상 BJ : </span><strong class="color_bl"></strong></li>
+                <li><span>선물받을 유저 : </span><strong class="color_bl"></strong></li>
+                <li>
+                    <span>보유중인 구독권 : </span>
+                    <div class="quick_box">
+                        <ul>
+                            <li>
+                                1개월 구독 선물권(30일) <em>보유 : <strong></strong></em>
+                                <div class="btn_wrap"><a href="#" data="712001" class="btn_st4">구매</a> <a href="#" data="1" class="btn_st5">선물</a></div>
+                            </li>
+                            <li>
+                                3개월 구독 선물권(90일) <em>보유 : <strong></strong></em>
+                                <div class="btn_wrap"><a href="#" data="712002" class="btn_st4">구매</a> <a href="#" data="2" class="btn_st5">선물</a></div>
+                            </li>
+                            <li class="last">
+                                6개월 구독 선물권(180일) <em>보유 : <strong></strong></em>
+                                <div class="btn_wrap"><a href="#" data="712003" class="btn_st4">구매</a> <a href="#" data="3" class="btn_st5">선물</a></div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <div class="fts11 pdt10 color_blk">※ 선물시 구독 대상 BJ를 구독할 수 있는 구독 선물권이 1개 선물됩니다.</div>
+        </div>
+        <div class="btn_wrap"><a href="javascript:;" class="btn_st2">닫기</a></div>
+        <a href="javascript:;" class="btn_close2">닫기</a>
+    </div></div>
+
+    <!-- 퀵뷰 선물하기 -->
+    <div class="layer_l" id="layerQuickViewGift"><div class="layer_in">
+        <strong class="title">퀵뷰 선물하기</strong>
+        <div class="layer_al">
+            <strong class="color_blk">퀵뷰란</strong> &nbsp; <a href="https://item.afreecatv.com/quickview.php" target="_blank" class="color_bl fts11">퀵뷰 혜택이 궁금하다면 클릭!</a><br />
+            <ul class="sub_list2">
+                <li>퀵뷰 아이템은 방송을 빠르고 편리하게 참여 할 수 있는 프리미엄 아이템 입니다. </li>
+            </ul>
+            <ul class="table_list qv_area">
+                <li><span>퀵뷰 선물받을 아이디 : </span><strong class="color_bl"></strong></li>
+                <li id="li_quickviewplus">
+                    <span>보유중인 퀵뷰 플러스 : </span>
+                    <div class="quick_box">
+                        <ul>
+                            <li id="7daysquickviewplus" style="display:none;">
+                                퀵뷰 플러스 7일 선물권<em>보유 : <strong>0</strong>개</em>
+                                <div class="btn_wrap"><a href="javascript:;" data="100" class="btn_st7">선물</a></div>
+                            </li>
+                            <li>
+                                퀵뷰 플러스 30일 선물권<em>보유 : <strong>0</strong>개</em>
+                                <div class="btn_wrap"><a href="javascript:;" data="740020" class="btn_st4">구매</a> <a href="javascript:;" class="btn_st7" data="101" >선물</a></div>
+                            </li>
+                            <li>
+                                퀵뷰 플러스 90일 선물권<em>보유 : <strong>0</strong>개</em>
+                                <div class="btn_wrap"><a href="javascript:;" data="740025" class="btn_st4">구매</a> <a href="javascript:;" class="btn_st7" data="102" >선물</a></div>
+                            </li>
+                            <li class="last">
+                                퀵뷰 플러스 365일 선물권<em>보유 : <strong>0</strong>개</em>
+                                <div class="btn_wrap"><a href="javascript:;" data="740030" class="btn_st4">구매</a> <a href="javascript:;" class="btn_st7" data="103" >선물</a></div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li id="li_quickview">
+                    <span class="space_t">보유중인 퀵뷰 : </span>
+                    <div class="quick_box">
+                        <ul>
+                            <li>
+                                퀵뷰 30일 선물권 <em>보유 : <strong>0</strong>개</em>
+                                <div class="btn_wrap"><a href="javascript:;" data="676752" class="btn_st4">구매</a> <a href="javascript:;" data="1" class="btn_st7">선물</a></div>
+                            </li>
+                            <li>
+                                퀵뷰 90일 선물권 <em>보유 : <strong>0</strong>개</em>
+                                <div class="btn_wrap"><a href="javascript:;" data="676753" class="btn_st4">구매</a> <a href="javascript:;" data="2" class="btn_st7">선물</a></div>
+                            </li>
+                            <li class="last">
+                                퀵뷰 365일 선물권 <em>보유 : <strong>0</strong>개</em>
+                                <div class="btn_wrap"><a href="javascript:;" data="676754" class="btn_st4">구매</a> <a href="javascript:;" data="3" class="btn_st7">선물</a></div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <div class="fts11 pdt10 color_blk">※ 선물시 해당 퀵뷰가 1개 선물됩니다.</div>
+        </div>
+        <div class="btn_wrap"><a href="javascript:;" class="btn_st2">닫기</a></div>
+        <a href="javascript:;" class="btn_close2">닫기</a>
+    </div></div>
+    <!-- //퀵뷰 선물하기 -->
+
+    <!-- 스티커 선물하기 -->
+    <div id="layerStickerGift" style="display:none;" class="pop_stk">
+    <h1>스티커 선물하기</h1>
+    <p class="what_stk">스티커란</p>
+    <div class="pop_layer" style="display:none;">
+        <div class="stk_layer">
+            <h2>BJ에게 격려와 힘이 되는 스티커</h2>
+            <ul>
+                <li><em>방송 아이템 교환</em>스티커는 BJ가 방송 <br> 아이템으로 교환 가능</li>
+                <li><em>서포터 가입</em>스티커를 선물하면 <br> BJ의 서포터로 가입</li>
+            </ul>
+            <p>스티커란 유저가 BJ에게 선물하는 유료 아이템 입니다.</p>
+            <a href="https://item.afreecatv.com/sticker.php" target="_blank" class="btn_itemview">스티커로 교환할 수 있는 아이템 보러가기</a>
+            <button type="button" class="layer_close">닫기</button>
+        </div>
+    </div>
+    <div class="sticker_wrap">
+        <div class="stkview_wrap">
+            <p class="sticker_view" id="stickerView"><img src="" alt="" /><span>10</span></p>
+            <div class="sticker_list2">
+                <div class="list_tit">
+                    <h2 class="blind">스티커 분류</h2>
+                    <ul id="stickerTabList">
+                    </ul>
+                </div>
+                <button type="button" class="btn_on"></button>
+                <div class="sticker_box" id="stickerImgList">
+                </div>
+            </div>
+        </div>
+        <div class="choice_stk">
+            <h3 class="st_choice">선물할 스티커 개수 선택 :</h3>
+            <ul>
+                <li><input type="radio" class="radio" id="radio1" name="optSticker" value="5" /><label for="radio1"> 5<em>개</em></label></li>
+                <li><input type="radio" class="radio" id="radio2" name="optSticker" value="10" checked /><label for="radio2" class="on"> 10<em>개</em></label></li>
+                <li><input type="radio" class="radio" id="radio3" name="optSticker" value="50" /><label for="radio3"> 50<em>개</em></label></li>
+                <li><input type="radio" class="radio" id="radio4" name="optSticker" value="100" /><label for="radio4"> 100<em>개</em></label></li>
+                <li class="last"><input type="radio" class="radio" id="radio5" name="optSticker" value="-1" title="직접입력 선택하셨습니다" /><label for="radio5"><input type="text" value="직접입력" class="self_txt" id="nSticker" title="선물한 스티커 개수를 적어주세요" maxlength="5" disabled /> <em>개</em></label></li>
+            </ul>
+        </div>
+        <div class="result">
+            <ul>
+                <li><em class="ugold">선물할 스티커</em><span class="use_gold">10</span>개</li>
+                <li><em class="cggold">보유중인 스티커</em><span class="gold">0</span>개<a href="javascript:;" class="btn_charge">구매</a></li>
+                <li><em class="givebj">선물할 BJ</em><span></span></li>
+            </ul>
+            <button type="button" class="btn_presen"><strong>선물하기</strong></button>
+        </div>
+    </div>
+    <span class="bg_layer png24" style="display:none;"></span>
+    <a href="javascript:;" class="btn_close2">닫기</a>
+    </div>
+    <!-- //스티커 선물하기 -->
+
+    <!-- 구독 이모티콘 구독 유도 레이어 -->
+    <div class="layer_xl" id="layer_gudok_emoticon"><div class="layer_in">
+        <div class="layer_ac">
+            구독팬 전용 이모티콘을 사용하려면 해당 BJ를 구독해야 합니다.<br>BJ를 구독하면 이모티콘 사용 뿐만 아니라<br>다양한 혜택을 받으실 수 있습니다.            <strong class="par color_blk">해당 BJ를 구독하시겠습니까?</strong>
+        </div>
+        <div class="btn_wrap_line"><a href="javascript:;" class="btn_st1">구독</a> <a href="javascript:;" class="btn_st2">아니오</a></div>
+        <a href="javascript:;" class="btn_close">닫기</a>
+    </div></div>
+    <!-- 구독 닉네임 구독 유도 레이어 -->
+    <div class="layer_m" id="layerBuySubscriptionNickname"><div class="layer_in">
+        <div class="layer_ac">
+            BJ를 구독하면 방송 채팅에서<br>구독 닉네임을 사용할 수 있습니다.<br><strong>구독 하시겠습니까?</strong>
+        </div>
+        <div class="btn_wrap_line"><a href="javascript:;" class="btn_st1">예</a> <a href="javascript:;" class="btn_st2">아니요</a></div>
+        <a href="javascript:;" class="btn_close">닫기</a>
+    </div></div>
+    <!-- 구독 하기 레이어 -->
+    <div id="layerBuyNoneSubscription" class="ui-pop layer-gudok" style="display:none" >
+        <p class="pop-title">구독하기</p>
+        <div class="pop-body"><div class="scroll_box">
+            <div class="gudok_bj">
+                <p><em></em><i>()</i>님을 구독하시겠습니까?</p>
+            </div>
+            <div class="benefits">
+                <h3>구독 혜택</h3>
+                <div class="info_img">
+                    <ul>
+                        <li>구독료 후원</li>
+                        <li>채팅 효과</li>
+                        <li>구독팬 전용 닉네임</li>
+                    </ul>
+                </div>
+
+                <a href="https://item.afreecatv.com/subscription.php#benefit" target="_blank" class="more">더 보기</a>
+            </div>
+
+            <!-- 48개월 이상 -->
+            <div class="perthnacorn over">
+			    <h3>구독 퍼스나콘</h3>
+                <ol>
+                    <!-- 기본 이미지 & 등록을 한 경우 li on 클래스 추가 -->
+
+                    <!-- 구독 이미지 등록하지 않은경우 -->
+                    <li id="per0" class="on">
+                        <span style='background-image:url("https://static.file.afreecatv.com/spcon/personalcon_default.png")'></span>
+                        <p>기본</p>
+                    </li>
+                    <!-- 구독 이미지 등록한 경우 -->
+                    <li id="per3" ><span><em></em></span><p>3개월</p></li>
+                    <li id="per6"><span><em></em></span><p>6개월</p></li>
+                    <li id="per12"><span><em></em></span><p>12개월</p></li>
+                    <li id="per24"><span><em></em></span><p>24개월</p></li>
+                    <li id="per36"><span><em></em></span><p>36개월</p></li>
+                    <li id="per48"><span><em></em></span><p>48개월</p></li>
+                    <li id="per60"><span><em></em></span><p>60개월</p></li>
+                    <li id="per72"><span><em></em></span><p>72개월</p></li>
+                    <li id="per84"><span><em></em></span><p>84개월</p></li>
+                </ol>
+            </div>
+
+            <div class="signature ">
+                <h3>시그니처 이모티콘 </h3>
+                <ul>
+                    <li class='noList'> 등록된 시그니처 이모티콘이 없습니다.</li>
+                </ul>
+            </div>
+        </div></div>
+        <div class="send_area">
+            <dl class="gd_select">
+                <dt>구독권 선택</dt>
+                    <dd>
+                                            <button class="active" data-itemId="700016" data-price="3300">월 자동결제</button>
+                        <button data-itemId="742120" data-price="3300">1개월</button>
+                                            <button data-itemId="710265" data-price="9900">3개월</button>
+                        <button data-itemId="710266" data-price="19800">6개월</button>
+                        <button data-itemId="710267" data-price="39600">12개월</button>
+                    </dd>
+                <dd class="tip">※ 구독을 이용할 기간을 선택해 주세요.</dd>
+            </dl>
+            <dl class="gd_total">
+                <dt>결제 금액</dt>
+                                <dd><strong >3,300</strong> 원</dd>
+                            </dl>
+            <div class="btn_area">
+                <button type="button" class="btn_b" >구독하기</button>
+                <button class="btn_w" >취소</button>
+            </div>
+        </div>
+        <a href="javascript:;" class="pop-close"><span>레이어 닫기</span></a>
+    </div>
+    <!-- 정기 구독 연장 레이어 -->
+    <div id="layerSubscriptionTicket" class="ui-pop layer-gudok ing" style="display:none">
+        <p class="pop-title">구독하기</p>
+        <div class="pop-body"><div class="scroll_box">
+            <div class="gudok_bj">
+                <div class="info_wrap">
+                    <div class="info">
+                        <strong><em>()</em></strong>
+                        <p><em>1개월</em> 구독 중</p>
+                    </div>
+                    <div class="thumb">
+                        <span style="background-image:url();"></span>
+                    </div>
+                </div>
+    			<span class="desc"> ※ 정기권으로 중복 구독하시면 구독 기간이 연장됩니다.</span>
+            </div>
+
+            <div class="gudok_infos">
+                <dl id="subscriptionInfo">
+                    <dt>이용중인 구독권</dt>
+                    <dd></dd>
+                    <dt>구독 기간</dt>
+                    <dd>  ~ 현재</dd>
+                    <dt>다음 결제일</dt>
+                </dl>
+                <a href="https://item.afreecatv.com/subscription.php#benefit" target="_blank" class="more">구독 혜택 보기</a>
+            </div>
+
+            <div class="perthnacorn">
+                <h3>이용중인 구독 퍼스나콘 </h3>
+                <div class="myStep">
+                    <div id="perPrev" class="prev"><span><em class="default"></em></span><p>기본</p></div>
+                    <div id="perNext" class="next"><span><em class="default"></em></span><p></p></div>
+                    <span class="progress"><em id="perProgress" style="width:0%;"></em></span>
+                </div>
+            </div>
+
+            <div class="signature active">
+                <h3>시그니처 이모티콘 </h3>
+                <ul>
+                    <li class='noList'> 등록된 시그니처 이모티콘이 없습니다.</li>
+                </ul>
+            </div>
+        </div></div>
+        <div class="send_area">
+            <dl class="gd_select">
+                <dt>구독권 선택</dt>
+                    <dd>
+                                            <button disabled data-itemId="700016" data-price="3300">월 자동결제</button>
+                                            <button class="active" data-itemId="742120" data-price="3300">1개월</button>
+                        <button data-itemId="710265" data-price="9900">3개월</button>
+                        <button data-itemId="710266" data-price="19800">6개월</button>
+                        <button data-itemId="710267" data-price="39600">12개월</button>
+                    </dd>
+                <dd class="tip">※ 구독을 이용할 기간을 선택해 주세요.</dd>
+            </dl>
+            <dl class="gd_total">
+                <dt>결제 금액</dt>
+                <dd><strong >3,300</strong>원</dd>
+            </dl>
+            <div class="btn_area">
+                <button type="button" class="btn_b" >연장하기</button>
+                <button class="btn_w" >취소</button>
+            </div>
+        </div>
+        <a href="javascript:;" class="pop-close"><span>레이어 닫기</span></a>
+    </div>
+
+    <!-- 자동 결제 구독 정보 레이어 -->
+    <div id="layerSubscriptionAutoPay" class="ui-pop layer-gudok ing" style="display:none">
+        <p class="pop-title">구독하기</p>
+        <div class="pop-body auto"><div class="scroll_box">
+            <div class="gudok_bj">
+                <div class="info_wrap">
+                    <div class="info">
+                        <strong><em>()</em></strong>
+                        <p><em>N개월</em> 구독 중</p>
+                    </div>
+                    <div class="thumb">
+                        <span style="background-image:url();"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gudok_infos">
+                <dl id='subscriptionInfo'>
+                    <dt>이용중인 구독권</dt>
+                    <dd></dd>
+                    <dt>구독 기간</dt>
+                    <dd></dd>
+                    <dt>잔여 일수</dt>
+                    <dd></dd>
+                    <dd>
+                        <button id="unsubscribeBtn" type="button" class="btn">
+                        </button>
+                    </dd>
+                </dl>
+                <a href="https://item.afreecatv.com/subscription.php#benefit" target="_blank" class="more">구독 혜택 보기</a>
+            </div>
+
+
+            <div class="perthnacorn">
+                <h3>이용중인 구독 퍼스나콘 </h3>
+                <div class="myStep">
+                    <div id="perPrev" class="prev"><span><em class="default"></em></span><p>기본</p></div>
+                    <div id="perNext" class="next"><span><em style="background-image:url();"></em></span><p></p></div>
+                    <span class="progress"><em id="perProgress" style="width:0%;"></em></span>
+                </div>
+            </div>
+
+            <div class="signature active">
+                <h3>시그니처 이모티콘 </h3>
+                <ul>
+                    <li class='noList'> 등록된 시그니처 이모티콘이 없습니다.</li>
+                </ul>
+            </div>
+        </div></div>
+        <div class="send_area" style="display:none">
+            <dl class="gd_select">
+                <dt>구독권 선택</dt>
+                    <dd>
+                                            <button class="active" data-itemId="700016" data-price="3300">월 자동결제</button>
+                                            <button data-itemId="742120" data-price="3300" disabled>1개월</button>
+                        <button data-itemId="710265" data-price="9900" disabled>3개월</button>
+                        <button data-itemId="710266" data-price="19800" disabled>6개월</button>
+                        <button data-itemId="710267" data-price="39600" disabled>12개월</button>
+                    </dd>
+                <dd class="tip">※ 구독을 이용할 기간을 선택해 주세요.</dd>
+            </dl>
+            <dl class="gd_total">
+                <dt>결제 금액</dt>
+                <dd><strong >3,300</strong>원</dd>
+            </dl>
+            <div class="btn_area">
+                <button type="button" class="btn_b" >연장하기</button>
+                <button class="btn_w" >취소</button>
+            </div>
+        </div>
+        <a href="javascript:;" class="pop-close"><span>닫기</span></a>
+    </div>
+
+    <!-- 구독 선물권 확인 레이어 -->
+    <div id="layerGiftSubscriptionConfirm" class="layer_m"><div class="layer_in">
+        <div class="layer_ac">
+            BJ닉네임님에게 사용 가능한<br><strong class="color_bl">선물 받은 6개월 구독권(180일)</strong>을 보유중입니다.<br><strong>사용하시겠습니까?</strong>
+        </div>
+        <div class="btn_wrap_line"><a href="javascript:;" class="btn_st1">예</a> <a href="javascript:;" class="btn_st2">아니요</a></div>
+        <a href="javascript:;" class="btn_close">닫기</a>
+    </div></div>
+    <!-- //불법 사설 도박으로 신고하겠습니까? -->
+    <!-- 미 구독중인 BJ  --> <!-- 팝업버젼 win_pop 클래스 추가 425*462 -->
+    <div id="layerNoneSubscriptionBjUseGift" class="pop_gudok">
+        <div class="layer_in">
+            <span class="lightbox"></span>
+            <h2>선물 받은 구독권 사용하기</h2>
+            <div class="info_area">
+                <p class="info_msg01"><span class="cr01">아프리카TV</span><em>(AfreecaTV)</em>님을 구독하시겠습니까?</p>
+                <div class="info_img">
+                    <ul class="blind">
+                    <li>구독료 후원</li>
+                    <li>채팅 효과</li>
+                    <li>구독팬 전용 닉네임</li>
+                    </ul>
+                    <a href="https://item.afreecatv.com/subscription.php#benefit" target="_blank">구독혜택 더 보러 가기</a>
+                </div>
+            </div>
+            <div class="send_area">
+                <dl class="gd_date">
+                <dt class="long">사용할 구독권</dt>
+                <dd>선물 받은 N개월 구독권(##일)</dd>
+                </dl>
+                <p class="t_info">내 구독 > 내 선물·후원 정보 > 구독 선물권에서 보유중인 선물 받은 구독권을 확인하실 수 있습니다.</p>
+                <div class="btn_area">
+                    <button class="btn_b">사용하기</button><button class="btn_w">취소</button>
+                </div>
+            </div>
+            <a href="javascript:;" class="btn_close">닫기</a>
+        </div>
+    </div>
+    <!-- //미 구독중인 BJ -->
+    <br />
+    <!-- 정기구독중인 BJ  --> <!-- 팝업버젼 win_pop 클래스 추가 425*411 -->
+    <div id="layerSubscriptionBjUseGift" class="pop_gudok">
+        <div class="layer_in">
+            <span class="lightbox"></span>
+            <h2>선물 받은 구독권 사용하기</h2>
+            <div class="info_area">
+                <p class="info_msg02"><span class="cr01">아프리카TV</span><em>(AfreecaTV)</em>님을 N개월 구독 중입니다!<br /><span class="cr02">※ 선물 받은 구독권으로 중복 구독하시면 구독 기간이 연장됩니다.</span></p>
+            </div>
+            <div class="send_area">
+                <dl class="gd_date">
+                <dt class="long">이용중인 구독권</dt>
+                <dd>정기구독권</dd>
+                </dl>
+                <dl class="gd_date gd_space">
+                <dt>구독기간</dt>
+                <dd>YYYY-MM-DD ~ YYYY-MM-DD (잔여일수 : DDDD일)</dd>
+                </dl>
+                <dl class="gd_date gd_space">
+                <dt class="long">사용할 구독권</dt>
+                <dd>선물 받은 N개월 구독권(##일)</dd>
+                </dl>
+
+                <div class="btn_area">
+                    <button class="btn_b">사용하기</button><button class="btn_w">취소</button>
+                </div>
+            </div>
+            <a href="javascript:;" class="btn_close">닫기</a>
+        </div>
+    </div>
+
+    <!-- 사용 성공 --> <!-- 팝업버젼 win_pop 클래스 추가 425*379-->
+    <div id="layerSubscriptionBjUseGiftSuccess" class="pop_gudok">
+        <div class="layer_in">
+            <span class="lightbox"></span>
+            <h2>선물 받은 구독권 사용하기</h2>
+            <div class="info_area">
+                <p class="info_msg02"><span class="cr01">아프리카TV</span>(AfreecaTV)님에게<br />선물 받은 N개월 구독권(##일)을 사용하였습니다.</p>
+            </div>
+            <div class="send_area">
+                <dl class="gd_date">
+                <dt class="long">이용중인 구독권</dt>
+                <dd>선물 받은 N개월 구독권(##일)</dd>
+                </dl>
+                <dl class="gd_date gd_space">
+                <dt>구독기간</dt>
+                <dd>YYYY-MM-DD ~ YYYY-MM-DD (잔여일수 : DDDD일)</dd>
+                </dl>
+                <div class="btn_area">
+                    <button class="btn_w">확인</button>
+                </div>
+            </div>
+            <a href="javascript:;" class="btn_close">닫기</a>
+        </div>
+    </div>
+    <!-- //사용 성공  -->
+
+    <!-- 구독이 불가능한 경우 -->
+    <div id="layerErrorSubscription" class="pop_gudok">
+        <div class="layer_in">
+            <span class="lightbox"></span>
+            <h2>구독하기</h2>
+            <div class="info_area">
+                <p class="info_msg02"><span class="cr01">아프리카TV</span>(AfreecaTV)님은<br />휴면중인 BJ로 구독할 수 없습니다. </p>
+            </div>
+            <div class="send_area">
+                <div class="btn_area">
+                    <button class="btn_w">확인</button>
+                </div>
+            </div>
+            <a href="#" class="btn_close">닫기</a>
+        </div>
+    </div>
+
+    <form name="oLoginTmpForm" style="margin:0px;" onsubmit="return false;">
+    <!-- 레이어 로그인 -->
+    <div class="lay lay_login " id="layerLogin" style="display: none;"><!-- 청소년인경우 lay_login_young 추가 -->
+    <!-- memo -->
+    <div class="memo">
+        <h2>아프리카TV</h2>
+        <div class="login_age_young" style="display: none;">만 19세 미만의 청소년이 이용할 수 없습니다. 로그인 후 이용해 주세요.</div><!-- 청소년인경우 -->
+        <!-- fieldset -->
+        <fieldset>
+            <legend>로그인영역</legend>
+            <div class="login">
+                <!-- 쓰기폼 -->
+                <dl>
+                    <dt><label for="szUid">아이디</label></dt><dd><input type="text" id="szUid" title="아이디"></dd>
+                    <dt><label for="szPassword">비밀번호</label></dt><dd><input type="password" id="szPassword" title="비밀번호" maxlength="15">
+                        <!-- 2017-0705 캡스 락 추가-->
+                        <span class="caps_Lock" style="display:none;">
+                            <em></em>
+                            <strong>Caps Lock</strong>이 켜져 있습니다.                        </span>
+                    </dd>
+                </dl>
+                <!-- //쓰기폼 -->
+
+
+                <!-- 알림 -->
+                <div class="info" style="display: none;">법정 대리인 동의가 필요한 아이디입니다.<br>법정대리인 인증 후 이용 부탁 드립니다.</div>
+                <!-- //알림 -->
+                <!-- 아이디저장 -->
+                <em class="idsave">
+                    <!-- 2019-0604 -->
+                    <input type="checkbox" id="log_retain" title="로그인 상태유지"> <label for="log_retain">로그인 상태 유지</label>
+                    <!-- 해외 통합 작업으로 인해 영어랑 베트남어 BR 추가 -->
+                    
+                    <div class="layer_info" style="display: none;">
+                        <span class="arrow"></span>
+                        <div class="layer_contents">
+                            <ul>
+                                <li class="red">개인정보 보호를 위해 개인 PC에서만 사용하세요.</li>
+                            </ul>
+                        </div>
+                        <a href="javascript:;" class="layer_close">레이어닫기</a>
+                    </div>
+                    <input type="checkbox" id="bSaveId" title="아이디 저장"> <label for="bSaveId">아이디 저장</label>
+                </em>
+                <!-- //아이디저장 -->
+                <!-- 로그인 -->
+                <button type="button" class="btn_login" title="로그인"></button>
+                <!-- //로그인 -->
+            </div>
+        </fieldset>
+        <!-- //fieldset -->
+        <!-- SNS 로그인 -->
+                <div class="sns_join">
+            <a href="#" class="naver" id="btnConnectNaver"><em></em><p>네이버로 로그인</p></a>
+            <a href="#" class="kakao" id="btnConnectKakao"><em></em><p>카카오로 로그인</p></a>
+            <a href="#" class="apple" id="btnConnectApple"><em></em><p>Apple ID로 로그인</p></a>
+        </div>
+                <!-- //SNS 로그인 -->
+        <!-- btnbox -->
+        <div class="btnbox end">
+            <span><a href="https://help.afreecatv.com" target="_blank">도움말</a></span>
+            <span><a href="https://member.afreecatv.com/app/find_id_pw.php" target="_blank">아이디/비밀번호 찾기</a></span>
+            <span><a href="https://member.afreecatv.com/app/join.php" target="_blank">회원가입</a></span>
+        </div>
+        <!-- //btnbox -->
+    </div>
+    <!-- //memo -->
+    <!-- close -->
+    <div class="btn_close_top"><a href="javascript:;" title="레이어 닫기">닫기</a></div>
+    <!-- //close -->
+    </div>
+    <!-- //레이어 로그인 -->
+
+    <!-- 레이어 2차 비밀번호 로그인 -->
+    <div class="lay lay_login " id="layerSecondLogin" style="display: none;">
+    <!-- memo -->
+    <div class="memo">
+        <h2>아프리카TV</h2>
+        <div class="pw_info">2차 비밀번호를 사용 중인 계정입니다. 2차 비밀번호를 입력해주세요</div>
+        <!-- fieldset -->
+        <fieldset>
+            <legend>로그인영역</legend>
+            <input type="hidden" id="szUid" title="아이디" />
+            <input type="hidden" id="bSaveId" title="아이디 저장" />
+            <div class="login login_pw2">
+                <!-- 쓰기폼 -->
+                <dl class="pw2">
+                    <dt><label for="szPassword2">비밀번호</label></dt><dd><input type="password" id="szPassword2" title="비밀번호"></dd>
+                </dl>
+                <!-- //쓰기폼 -->
+                <!-- 알림 -->
+                <div class="info" style="display: none;"></div>
+                <!-- //알림 -->
+                <!-- 로그인 -->
+                <button type="button" class="btn_login_pw2" title="로그인"></button>
+                <!-- //로그인 -->
+            </div>
+        </fieldset>
+        <!-- //fieldset -->
+        <!-- btnbox -->
+        <div class="btnbox end">
+            <span><a href="https://member.afreecatv.com/app/find_security.php" target="_blank" id="find_2nd_pwd">2차 비밀번호 찾기</a></span>
+        </div>
+        <!-- //btnbox -->
+    </div>
+    <!-- //memo -->
+    <!-- close -->
+    <div class="btn_close_top"><a href="javascript:;" title="레이어 닫기">닫기</a></div>
+    <!-- //close -->
+    </div>
+    <!-- //레이어 2차 비밀번호 로그인 -->
+    </form>
+
+    <!-- 닉네임 변경 -->
+    <div class="layer_s" id="layerNickChange"><div class="layer_in">
+        <strong class="title">닉네임 변경</strong>
+        <div class="layer_ac">
+            <span class="fts11">아프리카TV 닉네임을 입력해주세요.</span><br />
+            <span class="color_red fts11" style="display:none;"></span>
+        </div>
+        <div class="layer_ac pdt10">
+            <input type="text" title="닉네임 입력" class="input_text" style="width:120px"/> <a href="javascript:;" class="btn_st2">중복확인</a>
+        </div>
+        <ul class="sub_list">
+            <li>한글 6자(영문 12자)까지 입력 가능</li>
+            <li>변경 시, 24시간 후 재변경 가능</li>
+            <li>게시판 및 채팅에서 사용됩니다.</li>
+        </ul>
+        <div class="btn_wrap_line"><a href="javascript:;" class="btn_st1">확인</a> <a href="javascript:;" class="btn_st2">취소</a></div>
+        <a href="javascript:;" class="btn_close2">닫기</a>
+    </div></div>
+    <!-- //닉네임 변경 -->
+
+    <!-- 구독 닉네임 변경 -->
+    <div class="layer_s" id="layerSubscriptionNickChange"><div class="layer_in">
+            <strong class="title">구독팬 전용 닉네임 변경</strong>
+            <div class="layer_ac">
+                <p>구독팬 전용 닉네임을 입력해주세요.</p>
+                <span class="color_red fts11" style="display:none;"></span>
+            </div>
+            <div class="layer_ac pdt10">
+                <input type="text" title="닉네임 입력" class="input_text" style="width:120px"/> <a href="javascript:;" class="btn_st2">중복확인</a>
+            </div>
+            <ul class="sub_list">
+                <li>한글 6자(영문 12자)까지 입력 가능</li>
+                <li>설정 후 24시간 뒤 변경 가능</li>
+                <li>
+                    기본 닉네임은 <a id="nickSetting" href="javascript:;" >내정보&gt;닉네임설정</a>을 이용                </li>
+            </ul>
+            <div class="btn_wrap_line"><a href="javascript:;" class="btn_st1">변경</a> <a href="javascript:;" class="btn_st2">기본 닉네임 사용</a></div>
+            <a href="javascript:;" class="btn_close2">닫기</a>
+        </div></div>
+    <!-- //구독 닉네임 변경 -->
+
+    <!-- 플레시플레이어 지원종료 안내 레이어 -->
+    <div class="ui-pop improve  end_flashplayer" id="end_flashplayer"  style="display: none;" >
+        <div class="pop-title">Flash Player 서비스 종료 안내</div>
+        <div class="pop-body">
+
+            <p>Flash플레이어 지원이 2020년 6월에 종료되었습니다.<br>브라우저를 업데이트하여 최적의 환경에서 아프리카TV를 이용해 보세요!</p>
+            <ul>
+                <li class="chrome"><a href="//www.google.com/chrome" target="_blank"><span>Google Chrome</span></a></li>
+                <li class="edge"><a href="//www.microsoft.com/edge" target="_blank"><span>Microsoft Edge</span></a></li>
+                <li class="whale"><a href="//whale.naver.com" target="_blank"><span>Naver Whale</span></a></li>
+                <li class="opera"><a href="//www.opera.com" target="_blank"><span>Opera</span></a></li>
+                <li class="firefox"><a href="//www.mozilla.org/firefox/download/thanks" target="_blank"><span>Firefox</span></a></li>
+                <li class="safari"><a href="//support.apple.com/downloads/safari" target="_blank"><span>Safari</span></a></li>
+            </ul>
+
+        </div>
+        <!-- <div class="pop-btn">
+            <a href="javascript:;" class="btn">확인</a>
+        </div> -->
+        <a href="javascript:" class="pop-close"><span>닫기</span></a>
+    </div>
+    <!-- //플레시플레이어 지원종료 안내 레이어 -->
+
+    <!--신규 공유 레이어 -->
+    <div class="ui-pop improve share_broadcast_layer" id="layerShare" style="display: none;">
+        <div class="pop-title">공유하기</div>
+        <div class="pop-body">
+            <ul class="tab" id="share_tab">
+                <li class="on"><a href="javascript:;">URL</a></li>
+                <li><a href="javascript:;">퍼가기</a></li>
+            </ul>
+            <ul class="tab_contents">
+                <li class="on">
+                    <!-- 복사가되면 input_wrap 에 copy 클래스 추가 -->
+                    <div class="input_wrap">
+                        <input type="text" id="share_link" value="" readonly=""><button id="share_link_btn" type="text">복사</button>
+                    </div>
+                    <!-- 스펙아웃으로 인해 주석처리 -->
+                    <!-- <div class="check_wrap"><input type="checkbox" id="start_time"><label for="start_time"><span>00:00:01</span></label> 부터 재생 시작</div> -->
+                    <div class="sns_list">
+                                                    <button type="button" id="share_twitter" class="twitter"><span>트위터</span></button>
+                            <button type="button" id="share_facebook" class="facebook"><span>페이스북</span></button>
+                            <button type="button" id="share_telegram" class="telegram"><span>텔레그램</span></button>
+                            <button type="button" id="share_kakao" class="kakao"><span>카카오톡</span></button>
+
+                                                </div>
+                </li>
+                <li>
+                    <div class="select_box">
+                        <a class="selected" href="javascript:;">640x360</a>
+                        <ul>
+                            <li><a href="javascript:;" data-width="640" data-height="360">640X360</a></li>
+                            <li><a href="javascript:;" data-width="854" data-height="480">854X480</a></li>
+                            <li><a href="javascript:;" data-width="960" data-height="540">960X540</a></li>
+                        </ul>
+                    </div>
+                    <!-- <div class="wrap_right">
+                        <div class="check_wrap"><input type="checkbox" id="chat_on"><label for="chat_on"><span>채팅노출</span></label></div>
+                        <div class="check_wrap"><input type="checkbox" id="auto_start"><label for="auto_start"><span>자동재생</span></label></div>
+                    </div> -->
+
+                    <div class="input_wrap">
+                        <input type="text" id="share_source" value="<iframe width='640' height='360' src='" readonly=""><button id="share_source_btn" type="text">복사</button>
+                    </div>
+                    <!-- 스펙아웃으로 인해 주석처리 -->
+                    <!-- <div class="check_wrap"><input type="checkbox" id="start_time_2"><label for="start_time_2"><span>00:00:01</span></label> 부터 재생 시작</div> -->
+
+                </li>
+            </ul>
+        </div>
+        <div class="pop-btn">
+            <a href="javascript:;">취소</a>
+        </div>
+        <a href="javascript:;" class="pop-close"><span>닫기</span></a>
+    </div>
+    <!--//신규 공유 레이어 -->
+
+    <!-- 원본화질로 2015-06-15 추가 -->
+    <div class="layer_m" id="layerPlayOrg"><div class="layer_in">
+            <strong class="title">아프리카TV 원본화질로 시청하기</strong>
+            <div class="layer_ac">
+                <strong class="color_blk">원본화질로 시청하기 위해<br />아프리카TV 플레이어를 실행합니다.</strong><br />
+                <span class="fts11_pdt5">플레이어가 설치되지 않았을 경우,<br /><strong class="color_bl">[확인]</strong>을 클릭하면 프로그램이 설치됩니다. </span>
+            </div>
+            <div class="btn_wrap_line"><a href="#" class="btn_st1">확인</a> <a href="#" class="btn_st2">취소</a></div>
+            <a href="#" class="btn_close2">닫기</a>
+        </div></div>
+    <!-- //원본화질로 -->
+
+	<!-- 고화질로 시청하려면 2015-07-17 추가 -->
+    <div class="layer_m" id="layer_high_quality">
+        <div class="layer_in">
+            <div class="layer_ac">
+                <strong class="layer_stit">모든 방송을 고화질로 참여하려면?</strong>
+                <span class="fs11">BJ가 설정한 화질로 참여하기 위해서는<br />고화질 스트리머가 필요합니다.</span>
+            </div>
+            <div class="btn_wrap pdt10"><a href="javascript:;" class="btn_st1" id="install_streamer">고화질 스트리머 실행하기</a></div>
+            <span class="info_normal_quality">저화질로 계속 참여하시려면 <a href="javascript:;"><span class="color_bl">여기</span></a>를 클릭하세요</span>
+            <!-- a href="#" class="btn_close">닫기</a -->
+        </div>
+    </div>
+    <!-- //고화질로 시청하려면 -->
+
+    <!-- 플러그인 설치 2015-06-15 추가
+    <div class="layer_m" id="layerInstallPlugin"><div class="layer_in">
+            <strong class="title">플러그인 설치</strong>
+			<div class="layer_ac">
+				<span class="fts11_pdt5"><strong class="color_bl">파이어폭스, 크롬, 사파리, 오페라 브라우저</strong>에서<br />원활한 이용을 위해 플러그인 설치가 필요합니다</span>
+			</div>
+			<div class="btn_wrap_line"><a href="#" class="btn_st1">확인</a> <a href="#" class="btn_st2">취소</a></div>
+			<a href="#" class="btn_close2">닫기</a>
+		</div></div>
+	<!-- //플러그인 설치 -->
+
+    <!-- MAC 스트리머 업데이트 -->
+    <div class="layer_m" id="layer_high_quality_mac">
+        <div class="layer_in">
+            <div class="layer_ac">
+                <strong class="layer_stit">고화질 스트리머 업데이트 안내</strong>
+                <span class="fs11">고화질 스트리머가 업데이트 되었습니다.<br/>BJ가 설정한 화질로 참여하기 위해서는<br/>MAC OS 전용 고화질 스트리머가 필요합니다.</span>
+            </div>
+            <div class="btn_wrap pdt10"><a href="https://afupd1.afreecatv.com/AfreecaTV_MAC_Installer.pkg" class="btn_st1" target="_blank">고화질 스트리머 업데이트하기</a></div>
+            <!-- a href="#" class="btn_close">닫기</a -->
+        </div>
+    </div>
+    <!-- //MAC 스트리머 업데이트 -->
+    
+    <!-- 사파리 업데이트 레이어 -->
+    <div class="ui-pop improve high_definition" style="display:none">
+	<div class="pop-body">
+		<strong>고화질 스트리머 이용 안내</strong>
+		<p>이용중이신  MAC OS 버전은 원본,고화질 참여에 필요한 스트리머 설치가 원활하지 않아<br>
+		일반화질을 이용하시거나, 아래 두 가지 내용 참고하셔서 이용 부탁드립니다.</p>
+		<ul>
+			<li>
+				<em>1</em>
+				<strong>MAC OS 업데이트</strong>
+				<p>시스템 상단 ( <i class="ic_apple">apple</i> ) 아이콘 &gt; 시스템 환경 설정 &gt;<br>소프트웨어 업데이트</p>
+				<div class="browser">
+					<a href="https://support.apple.com/ko-kr/HT201541" target="_blank"><span class="icon setting">시스템 환경 설정</span></a>
+				</div>
+			</li>
+			<li>
+				<em>2</em>
+				<strong>타 브라우저 이용</strong>
+				<p>( 이미지 클릭시 해당 브라우저 다운로드 페이지로<br>이동합니다. )</p>
+				<ul class="browser">
+					<li><a href="https://www.google.co.kr/chrome" target="_blank" class="icon chrome">Chrome</a></li>
+					<li><a href="https://www.microsoft.com/ko-kr/edge" target="_blank" class="icon edge">Edge</a></li>
+					<li><a href="https://www.mozilla.org/ko/firefox/new/" target="_blank" class="icon firefox">Firefox</a></li>
+					<li><a href="https://www.opera.com/ko" target="_blank" class="icon opera">Opera</a></li>
+					<li><a href="https://whale.naver.com/ko/download/mac/" target="_blank" class="icon whale">Whale</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<a href="javascript:;" class="pop-close"><span>닫기</span></a>
+    </div>
+    <!-- 사파리 업데이트 레이어 -->
+
+    <!-- 구독 선물권 수신 레이어 -->
+    <div id="layerGiftSubscriptionAlram" class="layer_m"><div class="layer_in">
+        <div class="layer_ac">
+            닉네임(아이디)님이<br/><strong class="color_bl">N개월 구독권(##일)</strong>을 선물하였습니다.<br/><strong>지금 바로 사용하시겠습니까?</strong>
+        </div>
+        <div class="btn_wrap_line"><a href="javascript:;" class="btn_st1">예</a> <a href="javascript:;" class="btn_st2">아니요</a></div>
+        <a href="javascript:;" class="btn_close">닫기</a>
+    </div></div>
+
+    <!-- 별풍선 부족 시 구매 여부 레이어 -->
+    <div id="layerStarballoonBuyConfirm" class="layer_m"><div class="layer_in">
+        <div class="layer_ac">
+            보유하신 별풍선이 부족합니다.<br/>별풍선을 더 구매하시겠습니까?        </div>
+        <div class="btn_wrap_line"><a href="javascript:;" class="btn_st2">아니요</a> <a href="javascript:;" class="btn_st1">예</a></div>
+        <a href="javascript:;" class="btn_close">닫기</a>
+    </div></div>
+</div>
+<!-- //고정된 레이어 위치 -->
+
+<!-- 배경 딤처리-->
+<div class="bg_dark"></div>
+<!-- 툐스트 메세지-->
+<div class="toast_message" style="display:none;">
+    <!-- x버튼 없고 p 자동 정렬 -->
+    <div class="success" id="textCenterDiv" style="display:none;"><p class="text_center"></p></div>
+	<!-- x버튼 있음 -->
+    <div class="success" id="closeButtonDiv" style="display:none;"><p></p><button type="button" class="close"><span>닫기</span></button> </div>
+</div>
+<!-- //토스트 알럿 -->
+</body>
+</html>
