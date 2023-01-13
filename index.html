@@ -1,22 +1,36 @@
-<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-<video id="video"></video>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./assets/common.css">
+    <link rel="stylesheet" href="./assets/reset.css">
+    <link rel="stylesheet" href="./assets/a.css">
+    <link rel="stylesheet" href="./assets/b.css">
+    <link rel="stylesheet" href="./assets/c.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.5.11/split.min.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+<div class="wrapper">
+    <div id="view">
+        <iframe src="https://play.afreecatv.com/aflol/244457616/embed" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
+    </div>
+    <div id="chat">
+        <script async src="//client.uchat.io/uchat.js"></script>
+        <u-chat room='030901yu' style="width: 100%; height: 100%;"></u-chat>
+    </div>
+</div>
 <script>
-  if(Hls.isSupported()) {
-    var video = document.getElementById('video');
-    var hls = new Hls();
-    hls.loadSource('https://video-weaver.hkg06.hls.ttvnw.net/v1/playlist/Ct0Fm5sChpMKAjKfFsiPENWaxX9OO__cffiU0WdgkSmomwxM8sdgQUDDzdUOn5ieS9EoJ6kBS6Sqf9wPUXONQmldQuE1ONonzmXoo7yU5V-vp3kVLGC2uOJ5XpWwTCSMr62hTOhFxndUc8ve8hLIA2bBil34exYuijXhCJkhj6kOOAuc1KCF1ZLavdO58kgl40rCG-iY50kzD-javtrrFK7V0aFD4PpIXJO6gPiArLTRwGGcSaTNRUkqBNq8aeeZ8w7ImAG6QCtpe78qAqfw4yrlV5-OfI3_uNxxqFQpp4wz9BYTu-7u7ZHaILYpQhsCOPbG518puSEax92LfiuFORsLeqB_xFmWaBmwEghTx5qWBpOGKW-smmyHeVhTMBcwQcqkMrsMSPv4g5WgD-bjkuOQFbwOn4HtaXP2jojTdKUCpIp-KqDDk0vSQIdkWrKT8xQ6xOuHj56PeiNjGZUnqoVHYvtPHjjntxIeOySZ9oBrktNN70-5EL8EK1GEFyB4T2_jiBYy0oJ92KVAgZNqhc6StaRacwr9kUOZrSUx60eRcOmmYux0JdMRTm1qBKrAIEaOUwBkw_QATqxfhQp9eC4yNt1Li8qBViiBzYc8ldTwM8Vpfo89i4gJxyzZhAuXMF7fekwRlFOxO0l8xW3j-Vmd_xbnjVtWhrdS-rNV43M1L7eLT82TI4tXxRPns8JlI27Qfqn-e7xOcB2jDHhHYi5vp22BdbEgHkPPWVAchlBUg3YMiCjYxL8N7zuU04q4YRPMI12LYNqXLZCU2A4jj1KrDJUQVWmCfnN90wGonGEYPV5oAXhtM2GnD6UwdZ4SCjo72KJc74vzqFLC7lab4COJOSiNJfYkc0qvS8YOUaO6zNrUwQoA_O1XiCJHDDQlB1APE4-jDtfFEs67k8k7359EYwNzntj9gDtrqnJV8o-ZoXUE6ByBhzxpZVB2RBQSsDpj6EWj4qH2s3bjd55kphoMyiwVRfbUoj3yjGl-IAEqCXVzLXdlc3QtMjDOBQ.m3u8');
-    hls.attachMedia(video);
-    hls.on(Hls.Events.MANIFEST_PARSED,function() {
-      video.play();
-  });
- }
- // hls.js is not supported on platforms that do not have Media Source Extensions (MSE) enabled.
- // When the browser has built-in HLS support (check using `canPlayType`), we can provide an HLS manifest (i.e. .m3u8 URL) directly to the video element throught the `src` property.
- // This is using the built-in support of the plain video element, without using hls.js.
-  else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-    video.src = 'https://video-weaver.hkg06.hls.ttvnw.net/v1/playlist/Ct0Fm5sChpMKAjKfFsiPENWaxX9OO__cffiU0WdgkSmomwxM8sdgQUDDzdUOn5ieS9EoJ6kBS6Sqf9wPUXONQmldQuE1ONonzmXoo7yU5V-vp3kVLGC2uOJ5XpWwTCSMr62hTOhFxndUc8ve8hLIA2bBil34exYuijXhCJkhj6kOOAuc1KCF1ZLavdO58kgl40rCG-iY50kzD-javtrrFK7V0aFD4PpIXJO6gPiArLTRwGGcSaTNRUkqBNq8aeeZ8w7ImAG6QCtpe78qAqfw4yrlV5-OfI3_uNxxqFQpp4wz9BYTu-7u7ZHaILYpQhsCOPbG518puSEax92LfiuFORsLeqB_xFmWaBmwEghTx5qWBpOGKW-smmyHeVhTMBcwQcqkMrsMSPv4g5WgD-bjkuOQFbwOn4HtaXP2jojTdKUCpIp-KqDDk0vSQIdkWrKT8xQ6xOuHj56PeiNjGZUnqoVHYvtPHjjntxIeOySZ9oBrktNN70-5EL8EK1GEFyB4T2_jiBYy0oJ92KVAgZNqhc6StaRacwr9kUOZrSUx60eRcOmmYux0JdMRTm1qBKrAIEaOUwBkw_QATqxfhQp9eC4yNt1Li8qBViiBzYc8ldTwM8Vpfo89i4gJxyzZhAuXMF7fekwRlFOxO0l8xW3j-Vmd_xbnjVtWhrdS-rNV43M1L7eLT82TI4tXxRPns8JlI27Qfqn-e7xOcB2jDHhHYi5vp22BdbEgHkPPWVAchlBUg3YMiCjYxL8N7zuU04q4YRPMI12LYNqXLZCU2A4jj1KrDJUQVWmCfnN90wGonGEYPV5oAXhtM2GnD6UwdZ4SCjo72KJc74vzqFLC7lab4COJOSiNJfYkc0qvS8YOUaO6zNrUwQoA_O1XiCJHDDQlB1APE4-jDtfFEs67k8k7359EYwNzntj9gDtrqnJV8o-ZoXUE6ByBhzxpZVB2RBQSsDpj6EWj4qH2s3bjd55kphoMyiwVRfbUoj3yjGl-IAEqCXVzLXdlc3QtMjDOBQ.m3u8';
-    video.addEventListener('canplay',function() {
-      video.play();
-    });
-  }
+    Split(['#view', '#chat'], {
+        sizes: [75, 25],
+    })
 </script>
+
+</body>
+</html>
